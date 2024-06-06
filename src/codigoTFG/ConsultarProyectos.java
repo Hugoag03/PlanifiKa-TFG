@@ -273,42 +273,47 @@ public class ConsultarProyectos extends javax.swing.JFrame {
     private boolean procesandoSeleccion = false;
 
     public void guardarId() {
-    tdConsultarTrabajador.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-        @Override
-        public void valueChanged(ListSelectionEvent e) {
-            if (!e.getValueIsAdjusting() && tdConsultarTrabajador.getSelectedRow() != -1 && !procesandoSeleccion) {
-                int filaSeleccionada = tdConsultarTrabajador.getSelectedRow();
-                if (filaSeleccionada >= 0 && filaSeleccionada < tdConsultarTrabajador.getModel().getRowCount()) {
-                    procesandoSeleccion = true;
-                    idSeleccionado = tdConsultarTrabajador.getValueAt(filaSeleccionada, 0).toString();
+        tdConsultarTrabajador.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting() && tdConsultarTrabajador.getSelectedRow() != -1 && !procesandoSeleccion) {
+                    int filaSeleccionada = tdConsultarTrabajador.getSelectedRow();
+                    if (filaSeleccionada >= 0 && filaSeleccionada < tdConsultarTrabajador.getModel().getRowCount()) {
+                        procesandoSeleccion = true;
+                        idSeleccionado = tdConsultarTrabajador.getValueAt(filaSeleccionada, 0).toString();
 
-                    SwingUtilities.invokeLater(() -> {
-                        int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion", "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Gestionar proyecto", "Ver tareas asociadas"}, null);
-                        if (seleccion == 0) {
-                            GestionarProyecto gestionarP = new GestionarProyecto();
-                            gestionarP.setVisible(true);
-                            dispose();
-                        } else if (seleccion == 1) {
-                            ConsultarTareas consultarT = new ConsultarTareas();
-                            consultarT.setVisible(true);
-                            dispose();
-                        }
-                        procesandoSeleccion = false;
-                    });
+                        SwingUtilities.invokeLater(() -> {
+                            int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion", "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Gestionar proyecto", "Ver tareas asociadas"}, null);
+                            if (seleccion == 0) {
+                                GestionarProyecto gestionarP = new GestionarProyecto();
+                                gestionarP.setVisible(true);
+                                dispose();
+                            } else if (seleccion == 1) {
+                                ConsultarTareas consultarT = new ConsultarTareas();
+                                consultarT.setVisible(true);
+                                dispose();
+                            }
+                            procesandoSeleccion = false;
+                        });
+                    }
                 }
             }
-        }
-    });
-}
-
-
+        });
+    }
 
 
     private void LabelVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelVolverMouseClicked
         // TODO add your handling code here:
-        PanelJefeProyecto panelJP = new PanelJefeProyecto();
-        panelJP.setVisible(true);
-        this.dispose();
+        if (ConsultarTrabajadores.banderaProyectos == true) {
+            ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+            consultarT.setVisible(true);
+            this.dispose();
+        } else {
+            PanelJefeProyecto panelJP = new PanelJefeProyecto();
+            panelJP.setVisible(true);
+            this.dispose();
+        }
+
     }//GEN-LAST:event_LabelVolverMouseClicked
 
     /**
