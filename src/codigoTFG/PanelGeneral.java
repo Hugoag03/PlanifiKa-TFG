@@ -5,6 +5,7 @@
  */
 package codigoTFG;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -27,6 +28,7 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo2.setVisible(false);
         LabelCirculo3.setVisible(false);
         setIconImage(getIconImage());
+        jLabel1.setBackground(new Color(255, 255, 255, 100)); 
         
         if (Login.tipoEmpleado.equals("JefeProyecto")) {
             ImagenAdmin.setEnabled(false);
@@ -60,6 +62,7 @@ public class PanelGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         ImagenJefeProyecto = new javax.swing.JLabel();
         ImagenPerfil = new javax.swing.JLabel();
         ImagenEmpleado = new javax.swing.JLabel();
@@ -73,13 +76,19 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo2 = new javax.swing.JLabel();
         LabelCirculo3 = new javax.swing.JLabel();
         LabelCerrarSesion = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         PanelFondo.setMinimumSize(new java.awt.Dimension(1266, 587));
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 36)); // NOI18N
+        jLabel9.setForeground(java.awt.Color.white);
+        jLabel9.setText("¿Qué departamento desea visitar?");
+        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
 
         ImagenJefeProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lider.png"))); // NOI18N
         ImagenJefeProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -143,22 +152,22 @@ public class PanelGeneral extends javax.swing.JFrame {
         PanelFondo.add(ImagenAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 140, 140));
 
         LabelJefeProyecto.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelJefeProyecto.setForeground(java.awt.Color.white);
+        LabelJefeProyecto.setForeground(java.awt.Color.black);
         LabelJefeProyecto.setText("JEFES DE PROYECTO");
         PanelFondo.add(LabelJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
         LabelPerfil.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelPerfil.setForeground(java.awt.Color.white);
+        LabelPerfil.setForeground(java.awt.Color.black);
         LabelPerfil.setText("VER PERFIL");
         PanelFondo.add(LabelPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 390, 110, -1));
 
         LabelEmpleado.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelEmpleado.setForeground(java.awt.Color.white);
+        LabelEmpleado.setForeground(java.awt.Color.black);
         LabelEmpleado.setText("EMPLEADOS ");
         PanelFondo.add(LabelEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 120, -1));
 
         LabelAdmin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelAdmin.setForeground(java.awt.Color.white);
+        LabelAdmin.setForeground(java.awt.Color.black);
         LabelAdmin.setText("ADMINISTRADORES");
         PanelFondo.add(LabelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
@@ -187,8 +196,13 @@ public class PanelGeneral extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 70));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 600));
+        jLabel1.setBackground(java.awt.Color.white);
+        jLabel1.setOpaque(true);
+        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 1130, 280));
+
+        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setOpaque(true);
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -344,6 +358,8 @@ public class PanelGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJefeProyecto;
     private javax.swing.JLabel LabelPerfil;
     javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel labelFondo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,9 +50,10 @@ public class BarraProgreso extends JFrame implements Runnable {
 
         PanelFondo = new javax.swing.JPanel();
         jbar = new javax.swing.JProgressBar();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -62,20 +63,27 @@ public class BarraProgreso extends JFrame implements Runnable {
 
         jbar.setBackground(java.awt.Color.lightGray);
         jbar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jbar.setForeground(java.awt.Color.white);
+        jbar.setForeground(new java.awt.Color(147, 63, 63));
+        jbar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jbar.setStringPainted(true);
-        PanelFondo.add(jbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 690, 1200, 60));
+        PanelFondo.add(jbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 690, 1250, 60));
+
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel4.setForeground(java.awt.Color.white);
+        jLabel4.setText("Iniciando programa...");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoTFGGrande.png"))); // NOI18N
-        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, 503));
+        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, -1, 503));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 60)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 60)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("PlanifiKa");
-        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
+        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1410, 850));
+        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setOpaque(true);
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 820));
 
         getContentPane().add(PanelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 820));
 
@@ -119,7 +127,8 @@ public class BarraProgreso extends JFrame implements Runnable {
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JProgressBar jbar;
-    private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
 }

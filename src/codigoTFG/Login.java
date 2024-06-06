@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.*;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /**
  *
@@ -26,6 +27,23 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setIconImage(getIconImage());
+ 
+        
+labelFondo.setBorder(BorderFactory.createEmptyBorder(150, 50, 50, 50)); // Ajusta los valores según sea necesario
+labelFondo.setBorder(new JLabelShadowBorder(50));
+         // Create a new ShadowPanel
+    ShadowPanel shadowPanel = new ShadowPanel();
+    shadowPanel.setLayout(new BorderLayout()); // Set layout to BorderLayout
+
+    // Add jPanel1 to the ShadowPanel
+    shadowPanel.add(jPanel1, BorderLayout.CENTER);
+
+    // Add the ShadowPanel to the content pane of the frame
+    PanelFondo.add(shadowPanel, new AbsoluteConstraints(310, 110, 1050, 530));
+ 
+
+      
+    
     }
 
     @Override
@@ -45,16 +63,27 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         PanelFondo = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         CampoUsuario = new javax.swing.JTextField();
         CampoContraseña = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         labelFondo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
@@ -62,42 +91,124 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PanelFondo.setBackground(new java.awt.Color(102, 39, 40));
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoTFGGrande.png"))); // NOI18N
-        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 470, 490));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jSeparator1.setBackground(java.awt.Color.white);
-        jSeparator1.setForeground(java.awt.Color.white);
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        PanelFondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 10, 530));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                jLabel8MouseClicked(evt);
             }
         });
-        PanelFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 40, 40));
 
-        CampoUsuario.setBackground(java.awt.Color.black);
+        jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel12.setForeground(java.awt.Color.white);
+        jLabel12.setText("gestionar tareas, organizar proyectos");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel13.setForeground(java.awt.Color.white);
+        jLabel13.setText("y mantener un control efectivo de tu tiempo.");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel15.setForeground(java.awt.Color.white);
+        jLabel15.setText("PlanifiKa te ayuda a alcanzar tus metas de");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel14.setForeground(java.awt.Color.white);
+        jLabel14.setText("Con una interfaz intuitiva y funciones poderosas,");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel16.setForeground(java.awt.Color.white);
+        jLabel16.setText("manera eficiente y sin complicaciones.");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(102, 39, 40));
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton2.setForeground(java.awt.Color.white);
+        jButton2.setText("Conocer más");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 150, 50));
+
+        jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jLabel11.setForeground(java.awt.Color.white);
+        jLabel11.setText("PlanifiKa es tu solución completa para gestionar tareas");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel5.setForeground(java.awt.Color.white);
+        jLabel5.setText("Planifica con PlanifiKa");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(java.awt.Color.white);
+        jLabel10.setText("x");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 20, 30));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.lightGray);
+        jLabel2.setText("Introduzca su usuario");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.lightGray);
+        jLabel1.setText("Introduzca su contraseña");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        CampoUsuario.setBackground(java.awt.Color.white);
         CampoUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoUsuario.setForeground(java.awt.Color.white);
-        PanelFondo.add(CampoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 300, 40));
+        CampoUsuario.setForeground(java.awt.Color.black);
+        CampoUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.orange));
+        CampoUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                CampoUsuarioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CampoUsuarioFocusLost(evt);
+            }
+        });
+        CampoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CampoUsuarioMouseClicked(evt);
+            }
+        });
+        jPanel1.add(CampoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 300, 40));
 
-        CampoContraseña.setBackground(java.awt.Color.black);
+        CampoContraseña.setBackground(java.awt.Color.white);
         CampoContraseña.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoContraseña.setForeground(java.awt.Color.white);
-        PanelFondo.add(CampoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 300, 40));
+        CampoContraseña.setForeground(java.awt.Color.black);
+        CampoContraseña.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.orange));
+        CampoContraseña.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                CampoContraseñaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CampoContraseñaFocusLost(evt);
+            }
+        });
+        jPanel1.add(CampoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 300, 40));
 
-        jButton1.setBackground(java.awt.Color.black);
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(102, 39, 40));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton1.setForeground(java.awt.Color.white);
         jButton1.setText("Acceder");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -106,33 +217,35 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        PanelFondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 150, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 150, 30));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setText("Contraseña");
-        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel7.setForeground(java.awt.Color.black);
+        jLabel7.setText("Inicio de sesión");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.white);
-        jLabel2.setText("Usuario");
-        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+        labelFondo.setBackground(java.awt.Color.white);
+        labelFondo.setForeground(java.awt.Color.white);
+        labelFondo.setOpaque(true);
+        jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 370, 410));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 590));
+        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setOpaque(true);
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 530));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel4.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3295.jpg"))); // NOI18N
+        jLabel4.setOpaque(true);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 470, 540));
+
+        PanelFondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 1050, 530));
+
+        jLabel9.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 48)); // NOI18N
+        jLabel9.setForeground(java.awt.Color.white);
+        jLabel9.setText("Bienvenido a tu Sistema Gestor de Tareas");
+        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+
+        getContentPane().add(PanelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 711));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,10 +283,47 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void CampoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoUsuarioMouseClicked
+        // TODO add your handling code here:+
+        
+    }//GEN-LAST:event_CampoUsuarioMouseClicked
+
+    private void CampoUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoUsuarioFocusGained
+        // TODO add your handling code here:
+        jLabel2.setVisible(false);
+    }//GEN-LAST:event_CampoUsuarioFocusGained
+
+    private void CampoUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoUsuarioFocusLost
+        // TODO add your handling code here:
+        if(CampoUsuario.getText().isEmpty()){
+            jLabel2.setVisible(true);
+        }
+    }//GEN-LAST:event_CampoUsuarioFocusLost
+
+    private void CampoContraseñaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoContraseñaFocusGained
+        // TODO add your handling code here:
+          jLabel1.setVisible(false);
+    }//GEN-LAST:event_CampoContraseñaFocusGained
+
+    private void CampoContraseñaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoContraseñaFocusLost
+        // TODO add your handling code here:
+        if(CampoContraseña.getText().isEmpty()){
+            jLabel1.setVisible(true);
+        }
+    }//GEN-LAST:event_CampoContraseñaFocusLost
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -216,13 +366,24 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField CampoUsuario;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
     static String nombreUsuario;
