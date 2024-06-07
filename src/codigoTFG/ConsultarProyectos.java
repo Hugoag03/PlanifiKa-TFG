@@ -109,7 +109,8 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         ComboBoxOrdenar = new javax.swing.JComboBox<>();
         textFiltrarSegunDNI = new javax.swing.JLabel();
         LabelVolver = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -145,9 +146,9 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
         PanelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 1210, 550));
 
-        ComboBoxOrdenar.setBackground(java.awt.Color.black);
+        ComboBoxOrdenar.setBackground(java.awt.Color.white);
         ComboBoxOrdenar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        ComboBoxOrdenar.setForeground(java.awt.Color.white);
+        ComboBoxOrdenar.setForeground(java.awt.Color.black);
         ComboBoxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Fecha de entrega", "Nº Tareas" }));
         ComboBoxOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,10 +171,21 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 70, 70));
 
-        labelFondo.setBackground(java.awt.Color.black);
-        labelFondo.setForeground(java.awt.Color.white);
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(java.awt.Color.white);
+        jLabel10.setText("x");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 10, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 790));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,6 +328,11 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_LabelVolverMouseClicked
 
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -359,9 +376,10 @@ public class ConsultarProyectos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelLogo;
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFondo;
     private javax.swing.JTable tdConsultarTrabajador;
     private javax.swing.JLabel textFiltrarSegunDNI;
     // End of variables declaration//GEN-END:variables

@@ -5,10 +5,14 @@
  */
 package codigoTFG;
 
+import static codigoTFG.PanelAdmin.labelhora;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -29,6 +33,14 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo3.setVisible(false);
         setIconImage(getIconImage());
         jLabel1.setBackground(new Color(255, 255, 255, 100)); 
+        Timer timer = new Timer(0, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                ActualizarHora.actualizarHora(labelhora);
+
+            }
+        });
+        timer.start();
         
         if (Login.tipoEmpleado.equals("JefeProyecto")) {
             ImagenAdmin.setEnabled(false);
@@ -64,6 +76,7 @@ public class PanelGeneral extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         ImagenJefeProyecto = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         ImagenPerfil = new javax.swing.JLabel();
         ImagenEmpleado = new javax.swing.JLabel();
         ImagenAdmin = new javax.swing.JLabel();
@@ -77,6 +90,7 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo3 = new javax.swing.JLabel();
         LabelCerrarSesion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelhora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,6 +118,17 @@ public class PanelGeneral extends javax.swing.JFrame {
             }
         });
         PanelFondo.add(ImagenJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 140, 150));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(java.awt.Color.white);
+        jLabel10.setText("x");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 20, 30));
 
         ImagenPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/perfil.png"))); // NOI18N
         ImagenPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -200,6 +225,10 @@ public class PanelGeneral extends javax.swing.JFrame {
         jLabel1.setOpaque(true);
         PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 1130, 280));
 
+        labelhora.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelhora.setForeground(java.awt.Color.white);
+        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 440, 150, 30));
+
         jLabel6.setBackground(new java.awt.Color(147, 63, 63));
         jLabel6.setOpaque(true);
         PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 590));
@@ -208,7 +237,7 @@ public class PanelGeneral extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 1256, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,6 +336,11 @@ public class PanelGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LabelCerrarSesionMouseClicked
 
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -359,7 +393,9 @@ public class PanelGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel LabelPerfil;
     javax.swing.JPanel PanelFondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
+    public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables
 }

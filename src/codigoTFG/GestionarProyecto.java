@@ -90,16 +90,17 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         CheckBoxModificar = new javax.swing.JCheckBox();
-        labelFondo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CampoID.setBackground(java.awt.Color.black);
+        CampoID.setBackground(java.awt.Color.white);
         CampoID.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoID.setForeground(java.awt.Color.white);
+        CampoID.setForeground(java.awt.Color.black);
         CampoID.setEnabled(false);
         PanelFondo.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 90, -1));
 
@@ -121,9 +122,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel4.setText("PlanifiKa");
         PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
 
-        CampoFechaEntrega.setBackground(java.awt.Color.black);
+        CampoFechaEntrega.setBackground(java.awt.Color.white);
         CampoFechaEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaEntrega.setForeground(java.awt.Color.white);
+        CampoFechaEntrega.setForeground(java.awt.Color.black);
         CampoFechaEntrega.setEnabled(false);
         CampoFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,9 +138,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel9.setText("Fecha de entrega:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.black);
+        CampoNombre.setBackground(java.awt.Color.white);
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.white);
+        CampoNombre.setForeground(java.awt.Color.black);
         CampoNombre.setEnabled(false);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
@@ -148,7 +149,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel10.setText("Nombre:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        BotonAñadirTareas.setBackground(java.awt.Color.black);
+        BotonAñadirTareas.setBackground(new java.awt.Color(102, 39, 40));
         BotonAñadirTareas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonAñadirTareas.setForeground(java.awt.Color.white);
         BotonAñadirTareas.setText("Añadir tareas al proyecto");
@@ -166,9 +167,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel8.setText("Descripción:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, -1));
 
-        CampoDescripcion.setBackground(java.awt.Color.black);
+        CampoDescripcion.setBackground(java.awt.Color.white);
         CampoDescripcion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDescripcion.setForeground(java.awt.Color.white);
+        CampoDescripcion.setForeground(java.awt.Color.black);
         CampoDescripcion.setEnabled(false);
         PanelFondo.add(CampoDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 250, -1));
 
@@ -181,7 +182,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 70, 70));
 
-        BotonModificarProyecto.setBackground(java.awt.Color.black);
+        BotonModificarProyecto.setBackground(new java.awt.Color(102, 39, 40));
         BotonModificarProyecto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonModificarProyecto.setForeground(java.awt.Color.white);
         BotonModificarProyecto.setText("Modificar proyecto");
@@ -199,9 +200,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         LabelNumeroTareas.setText("0");
         PanelFondo.add(LabelNumeroTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 20, 30));
 
-        CampoIDJefeProyecto.setBackground(java.awt.Color.black);
+        CampoIDJefeProyecto.setBackground(java.awt.Color.white);
         CampoIDJefeProyecto.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoIDJefeProyecto.setForeground(java.awt.Color.white);
+        CampoIDJefeProyecto.setForeground(java.awt.Color.black);
         CampoIDJefeProyecto.setEnabled(false);
         PanelFondo.add(CampoIDJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 250, -1));
 
@@ -215,8 +216,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel1.setText("Tareas añadidas:");
         PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, -1, 30));
 
+        CheckBoxModificar.setBackground(java.awt.Color.white);
         CheckBoxModificar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CheckBoxModificar.setForeground(java.awt.Color.white);
+        CheckBoxModificar.setForeground(java.awt.Color.black);
         CheckBoxModificar.setText("Modificar");
         CheckBoxModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CheckBoxModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -226,10 +228,21 @@ public class GestionarProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(CheckBoxModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, -1, -1));
 
-        labelFondo.setBackground(java.awt.Color.black);
-        labelFondo.setForeground(java.awt.Color.white);
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 740));
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel11.setForeground(java.awt.Color.white);
+        jLabel11.setText("x");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 740));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -358,6 +371,11 @@ public class GestionarProyecto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CheckBoxModificarActionPerformed
 
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -416,12 +434,13 @@ public class GestionarProyecto extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
 
     static int idProyectoActual;

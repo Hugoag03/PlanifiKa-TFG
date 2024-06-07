@@ -239,7 +239,8 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         tdConsultarTrabajador = new javax.swing.JTable();
         LabelLogo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -255,9 +256,9 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, 70, 70));
 
-        CampoDNI.setBackground(java.awt.Color.black);
+        CampoDNI.setBackground(java.awt.Color.white);
         CampoDNI.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoDNI.setForeground(java.awt.Color.white);
+        CampoDNI.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, 430, 40));
 
         textFiltrarSegunDNI.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
@@ -265,9 +266,9 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         textFiltrarSegunDNI.setText("Se podrá filtrar los trabajadores a partir de su DNI");
         PanelFondo.add(textFiltrarSegunDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
 
-        tdConsultarTrabajador.setBackground(java.awt.Color.black);
+        tdConsultarTrabajador.setBackground(java.awt.Color.white);
         tdConsultarTrabajador.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tdConsultarTrabajador.setForeground(java.awt.Color.white);
+        tdConsultarTrabajador.setForeground(java.awt.Color.black);
         tdConsultarTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null}
@@ -297,8 +298,21 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         jLabel4.setText("PlanifiKa");
         PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 810));
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(java.awt.Color.white);
+        jLabel10.setText("x");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 10, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -331,6 +345,11 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_LabelVolverMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -375,9 +394,10 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
     private javax.swing.JLabel LabelLogo;
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFondo;
     private javax.swing.JTable tdConsultarTrabajador;
     private javax.swing.JLabel textFiltrarSegunDNI;
     // End of variables declaration//GEN-END:variables

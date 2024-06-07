@@ -5,12 +5,15 @@
  */
 package codigoTFG;
 
+import static codigoTFG.PanelAdmin.labelhora;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,6 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
@@ -32,7 +36,15 @@ public class Perfil extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        setIconImage(getIconImage());
+        setIconImage(getIconImage()); 
+        Timer timer = new Timer(0, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                ActualizarHora.actualizarHora(labelhora);
+
+            }
+        });
+        timer.start();
 
         Connection cn = conexion.Conexion.conectar();
         try {
@@ -125,10 +137,12 @@ public class Perfil extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         CampoEstado = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        labelhora = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         CampoFechaInicio = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         LabelCerrarSesion = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -152,28 +166,25 @@ public class Perfil extends javax.swing.JFrame {
         PanelFoto.setLayout(PanelFotoLayout);
         PanelFotoLayout.setHorizontalGroup(
             PanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFotoLayout.createSequentialGroup()
-                .addComponent(LabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+            .addComponent(LabelImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
         );
         PanelFotoLayout.setVerticalGroup(
             PanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFotoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(LabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
-        PanelFondo.add(PanelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 440, 470));
+        PanelFondo.add(PanelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 430, 440));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
         jLabel5.setText("Teléfono:");
         PanelFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, -1, -1));
 
-        CampoAgregadoPor.setBackground(java.awt.Color.black);
+        CampoAgregadoPor.setBackground(java.awt.Color.white);
         CampoAgregadoPor.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoAgregadoPor.setForeground(java.awt.Color.white);
+        CampoAgregadoPor.setForeground(new java.awt.Color(147, 63, 63));
         CampoAgregadoPor.setEnabled(false);
         CampoAgregadoPor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,9 +198,9 @@ public class Perfil extends javax.swing.JFrame {
         jLabel17.setText("Agregado por:");
         PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
 
-        CampoDireccion.setBackground(java.awt.Color.black);
+        CampoDireccion.setBackground(java.awt.Color.white);
         CampoDireccion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDireccion.setForeground(java.awt.Color.white);
+        CampoDireccion.setForeground(new java.awt.Color(147, 63, 63));
         CampoDireccion.setEnabled(false);
         PanelFondo.add(CampoDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 330, -1));
 
@@ -203,21 +214,21 @@ public class Perfil extends javax.swing.JFrame {
         jLabel7.setText("Correo electrónico:");
         PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, -1, -1));
 
-        CampoTelefono.setBackground(java.awt.Color.black);
+        CampoTelefono.setBackground(java.awt.Color.white);
         CampoTelefono.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoTelefono.setForeground(java.awt.Color.white);
+        CampoTelefono.setForeground(new java.awt.Color(147, 63, 63));
         CampoTelefono.setEnabled(false);
         PanelFondo.add(CampoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, 330, -1));
 
-        CampoEmail.setBackground(java.awt.Color.black);
+        CampoEmail.setBackground(java.awt.Color.white);
         CampoEmail.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmail.setForeground(java.awt.Color.white);
+        CampoEmail.setForeground(new java.awt.Color(147, 63, 63));
         CampoEmail.setEnabled(false);
         PanelFondo.add(CampoEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 330, -1));
 
-        CampoDNI.setBackground(java.awt.Color.black);
+        CampoDNI.setBackground(java.awt.Color.white);
         CampoDNI.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDNI.setForeground(java.awt.Color.white);
+        CampoDNI.setForeground(new java.awt.Color(147, 63, 63));
         CampoDNI.setEnabled(false);
         CampoDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,9 +242,9 @@ public class Perfil extends javax.swing.JFrame {
         jLabel9.setText("DNI:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 120, -1, -1));
 
-        CampoNombreCompleto.setBackground(java.awt.Color.black);
+        CampoNombreCompleto.setBackground(java.awt.Color.white);
         CampoNombreCompleto.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombreCompleto.setForeground(java.awt.Color.white);
+        CampoNombreCompleto.setForeground(new java.awt.Color(147, 63, 63));
         CampoNombreCompleto.setEnabled(false);
         PanelFondo.add(CampoNombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 330, -1));
 
@@ -242,9 +253,9 @@ public class Perfil extends javax.swing.JFrame {
         jLabel10.setText("Nombre completo:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
-        CampoEmpresa.setBackground(java.awt.Color.black);
+        CampoEmpresa.setBackground(java.awt.Color.white);
         CampoEmpresa.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmpresa.setForeground(java.awt.Color.white);
+        CampoEmpresa.setForeground(new java.awt.Color(147, 63, 63));
         CampoEmpresa.setEnabled(false);
         PanelFondo.add(CampoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 580, 210, -1));
 
@@ -253,9 +264,9 @@ public class Perfil extends javax.swing.JFrame {
         jLabel11.setText("Empresa:");
         PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 550, -1, -1));
 
-        CampoTipo.setBackground(java.awt.Color.black);
+        CampoTipo.setBackground(java.awt.Color.white);
         CampoTipo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoTipo.setForeground(java.awt.Color.white);
+        CampoTipo.setForeground(new java.awt.Color(147, 63, 63));
         CampoTipo.setEnabled(false);
         PanelFondo.add(CampoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, 210, -1));
 
@@ -264,9 +275,9 @@ public class Perfil extends javax.swing.JFrame {
         jLabel13.setText("Tipo:");
         PanelFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 340, -1, -1));
 
-        CampoEstado.setBackground(java.awt.Color.black);
+        CampoEstado.setBackground(java.awt.Color.white);
         CampoEstado.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEstado.setForeground(java.awt.Color.white);
+        CampoEstado.setForeground(new java.awt.Color(147, 63, 63));
         CampoEstado.setEnabled(false);
         CampoEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,9 +291,24 @@ public class Perfil extends javax.swing.JFrame {
         jLabel14.setText("Estado:");
         PanelFondo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 230, -1, -1));
 
-        CampoFechaInicio.setBackground(java.awt.Color.black);
+        labelhora.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelhora.setForeground(java.awt.Color.white);
+        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, 150, 30));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel12.setForeground(java.awt.Color.white);
+        jLabel12.setText("x");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, 20, 30));
+
+        CampoFechaInicio.setBackground(java.awt.Color.white);
         CampoFechaInicio.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaInicio.setForeground(java.awt.Color.white);
+        CampoFechaInicio.setForeground(new java.awt.Color(147, 63, 63));
         CampoFechaInicio.setEnabled(false);
         PanelFondo.add(CampoFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 480, 210, -1));
 
@@ -298,20 +324,22 @@ public class Perfil extends javax.swing.JFrame {
                 LabelCerrarSesionMouseClicked(evt);
             }
         });
-        PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, 70, 70));
+        PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 640, 70, 70));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 820));
+        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel6.setOpaque(true);
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 1308, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -340,6 +368,11 @@ public class Perfil extends javax.swing.JFrame {
     private void CampoAgregadoPorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoAgregadoPorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoAgregadoPorActionPerformed
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -394,16 +427,18 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFoto;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel labelFondo;
+    public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables
       String urlImagen;
     String estado;

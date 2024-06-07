@@ -103,7 +103,8 @@ public class CrearTrabajador extends javax.swing.JFrame {
         BotonInactivo = new javax.swing.JRadioButton();
         ComboBoxAgregadoPor = new javax.swing.JComboBox<>();
         LabelVolver = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -133,19 +134,19 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel7.setText("Correo electrónico:");
         PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
 
-        CampoTelefono.setBackground(java.awt.Color.black);
+        CampoTelefono.setBackground(java.awt.Color.white);
         CampoTelefono.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoTelefono.setForeground(java.awt.Color.white);
+        CampoTelefono.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 250, -1));
 
-        CampoEmail.setBackground(java.awt.Color.black);
+        CampoEmail.setBackground(java.awt.Color.white);
         CampoEmail.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmail.setForeground(java.awt.Color.white);
+        CampoEmail.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 270, -1));
 
-        CampoEmpresa.setBackground(java.awt.Color.black);
+        CampoEmpresa.setBackground(java.awt.Color.white);
         CampoEmpresa.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmpresa.setForeground(java.awt.Color.white);
+        CampoEmpresa.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 650, 270, -1));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -158,9 +159,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel13.setText("Estado:");
         PanelFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
 
-        CampoDireccion.setBackground(java.awt.Color.black);
+        CampoDireccion.setBackground(java.awt.Color.white);
         CampoDireccion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDireccion.setForeground(java.awt.Color.white);
+        CampoDireccion.setForeground(java.awt.Color.black);
         CampoDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoDireccionActionPerformed(evt);
@@ -173,9 +174,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel14.setText("Dirección:");
         PanelFondo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, -1, -1));
 
-        CampoFechaInicio.setBackground(java.awt.Color.black);
+        CampoFechaInicio.setBackground(java.awt.Color.white);
         CampoFechaInicio.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaInicio.setForeground(java.awt.Color.white);
+        CampoFechaInicio.setForeground(java.awt.Color.black);
         CampoFechaInicio.setEnabled(false);
         PanelFondo.add(CampoFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 480, 260, -1));
 
@@ -189,9 +190,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel6.setText("Tipo:");
         PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
 
-        CampoDNI.setBackground(java.awt.Color.black);
+        CampoDNI.setBackground(java.awt.Color.white);
         CampoDNI.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDNI.setForeground(java.awt.Color.white);
+        CampoDNI.setForeground(java.awt.Color.black);
         CampoDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoDNIActionPerformed(evt);
@@ -204,9 +205,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel9.setText("DNI:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 150, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.black);
+        CampoNombre.setBackground(java.awt.Color.white);
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.white);
+        CampoNombre.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -224,7 +225,7 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel17.setText("Agregado por:");
         PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, -1, -1));
 
-        BotonCrearEmpleado.setBackground(java.awt.Color.black);
+        BotonCrearEmpleado.setBackground(new java.awt.Color(102, 39, 40));
         BotonCrearEmpleado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonCrearEmpleado.setForeground(java.awt.Color.white);
         BotonCrearEmpleado.setText("Crear empleado");
@@ -236,9 +237,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonCrearEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 760, 240, 60));
 
-        BotonFoto.setBackground(java.awt.Color.black);
+        BotonFoto.setBackground(java.awt.Color.white);
         BotonFoto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonFoto.setForeground(java.awt.Color.white);
+        BotonFoto.setForeground(java.awt.Color.black);
         BotonFoto.setText("Añadir foto");
         BotonFoto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonFoto.addActionListener(new java.awt.event.ActionListener() {
@@ -253,34 +254,36 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel8.setText("Apellidos:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, -1));
 
-        CampoApellidos.setBackground(java.awt.Color.black);
+        CampoApellidos.setBackground(java.awt.Color.white);
         CampoApellidos.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoApellidos.setForeground(java.awt.Color.white);
+        CampoApellidos.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 250, -1));
 
-        ComboTipo.setBackground(java.awt.Color.black);
+        ComboTipo.setBackground(java.awt.Color.white);
         ComboTipo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        ComboTipo.setForeground(java.awt.Color.white);
+        ComboTipo.setForeground(java.awt.Color.black);
         ComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Jefe de proyecto", "Empleado" }));
         ComboTipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PanelFondo.add(ComboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 260, -1));
 
+        BotonActivo.setBackground(java.awt.Color.white);
         buttonGroup1.add(BotonActivo);
         BotonActivo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonActivo.setForeground(java.awt.Color.white);
+        BotonActivo.setForeground(java.awt.Color.black);
         BotonActivo.setText("Activo");
         BotonActivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PanelFondo.add(BotonActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
 
+        BotonInactivo.setBackground(java.awt.Color.white);
         buttonGroup1.add(BotonInactivo);
         BotonInactivo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonInactivo.setForeground(java.awt.Color.white);
+        BotonInactivo.setForeground(java.awt.Color.black);
         BotonInactivo.setText("Inactivo");
         BotonInactivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PanelFondo.add(BotonInactivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, -1, -1));
 
-        ComboBoxAgregadoPor.setBackground(java.awt.Color.black);
-        ComboBoxAgregadoPor.setForeground(java.awt.Color.white);
+        ComboBoxAgregadoPor.setBackground(java.awt.Color.white);
+        ComboBoxAgregadoPor.setForeground(java.awt.Color.black);
         PanelFondo.add(ComboBoxAgregadoPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 650, 270, 40));
 
         LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
@@ -292,10 +295,21 @@ public class CrearTrabajador extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 760, 70, 70));
 
-        labelFondo.setBackground(java.awt.Color.black);
-        labelFondo.setForeground(java.awt.Color.white);
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 870));
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel12.setForeground(java.awt.Color.white);
+        jLabel12.setText("x");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 20, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 860));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -409,6 +423,11 @@ public class CrearTrabajador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LabelVolverMouseClicked
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -466,18 +485,19 @@ public class CrearTrabajador extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
     String urlImagen;
     String estado;

@@ -75,7 +75,8 @@ public class CrearProyecto extends javax.swing.JFrame {
         CheckTareas = new javax.swing.JCheckBox();
         LabelNumeroTareas = new javax.swing.JLabel();
         ComboBoxEncargado = new javax.swing.JComboBox<>();
-        labelFondo = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,9 +96,9 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel4.setText("PlanifiKa");
         PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
 
-        CampoFechaEntrega.setBackground(java.awt.Color.black);
+        CampoFechaEntrega.setBackground(java.awt.Color.white);
         CampoFechaEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaEntrega.setForeground(java.awt.Color.white);
+        CampoFechaEntrega.setForeground(java.awt.Color.black);
         CampoFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoFechaEntregaActionPerformed(evt);
@@ -110,9 +111,9 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel9.setText("Fecha de entrega:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.black);
+        CampoNombre.setBackground(java.awt.Color.white);
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.white);
+        CampoNombre.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -125,7 +126,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel10.setText("Nombre:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        BotonAñadirTareas.setBackground(java.awt.Color.black);
+        BotonAñadirTareas.setBackground(new java.awt.Color(102, 39, 40));
         BotonAñadirTareas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonAñadirTareas.setForeground(java.awt.Color.white);
         BotonAñadirTareas.setText("Añadir tareas al proyecto");
@@ -135,16 +136,16 @@ public class CrearProyecto extends javax.swing.JFrame {
                 BotonAñadirTareasActionPerformed(evt);
             }
         });
-        PanelFondo.add(BotonAñadirTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 340, 60));
+        PanelFondo.add(BotonAñadirTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 330, 60));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
         jLabel8.setText("Descripción:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, -1));
 
-        CampoDescripcion.setBackground(java.awt.Color.black);
+        CampoDescripcion.setBackground(java.awt.Color.white);
         CampoDescripcion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDescripcion.setForeground(java.awt.Color.white);
+        CampoDescripcion.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 250, -1));
 
         LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
@@ -156,7 +157,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 70, 70));
 
-        BotonCrearProyecto.setBackground(java.awt.Color.black);
+        BotonCrearProyecto.setBackground(new java.awt.Color(102, 39, 40));
         BotonCrearProyecto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonCrearProyecto.setForeground(java.awt.Color.white);
         BotonCrearProyecto.setText("Crear proyecto");
@@ -166,8 +167,9 @@ public class CrearProyecto extends javax.swing.JFrame {
                 BotonCrearProyectoActionPerformed(evt);
             }
         });
-        PanelFondo.add(BotonCrearProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 240, 60));
+        PanelFondo.add(BotonCrearProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, 260, 60));
 
+        CheckTareas.setBackground(new java.awt.Color(147, 63, 63));
         CheckTareas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CheckTareas.setForeground(java.awt.Color.white);
         CheckTareas.setText("Tareas añadidas:");
@@ -176,21 +178,32 @@ public class CrearProyecto extends javax.swing.JFrame {
                 CheckTareasActionPerformed(evt);
             }
         });
-        PanelFondo.add(CheckTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, 30));
+        PanelFondo.add(CheckTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, 30));
 
         LabelNumeroTareas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LabelNumeroTareas.setForeground(java.awt.Color.white);
         LabelNumeroTareas.setText("0");
-        PanelFondo.add(LabelNumeroTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 20, 30));
+        PanelFondo.add(LabelNumeroTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 20, 30));
 
-        ComboBoxEncargado.setBackground(java.awt.Color.black);
-        ComboBoxEncargado.setForeground(java.awt.Color.white);
+        ComboBoxEncargado.setBackground(java.awt.Color.white);
+        ComboBoxEncargado.setForeground(java.awt.Color.black);
         PanelFondo.add(ComboBoxEncargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 260, 40));
 
-        labelFondo.setBackground(java.awt.Color.black);
-        labelFondo.setForeground(java.awt.Color.white);
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 740));
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel12.setForeground(java.awt.Color.white);
+        jLabel12.setText("x");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 740));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -320,6 +333,11 @@ public class CrearProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckTareasActionPerformed
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -373,10 +391,11 @@ public class CrearProyecto extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
     String urlImagen;
     String estado;

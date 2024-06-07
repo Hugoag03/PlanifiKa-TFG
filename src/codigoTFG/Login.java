@@ -27,30 +27,25 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setIconImage(getIconImage());
- 
-        
-labelFondo.setBorder(BorderFactory.createEmptyBorder(150, 50, 50, 50)); // Ajusta los valores según sea necesario
-labelFondo.setBorder(new JLabelShadowBorder(50));
-         // Create a new ShadowPanel
-    ShadowPanel shadowPanel = new ShadowPanel();
-    shadowPanel.setLayout(new BorderLayout()); // Set layout to BorderLayout
 
-    // Add jPanel1 to the ShadowPanel
-    shadowPanel.add(jPanel1, BorderLayout.CENTER);
+        ShadowPanel shadowPanel = new ShadowPanel();
+        shadowPanel.setLayout(new BorderLayout()); 
 
-    // Add the ShadowPanel to the content pane of the frame
-    PanelFondo.add(shadowPanel, new AbsoluteConstraints(310, 110, 1050, 530));
- 
+        shadowPanel.add(jPanel1, BorderLayout.CENTER);
 
-      
-    
+        PanelFondo.add(shadowPanel, new AbsoluteConstraints(310, 110, 1050, 530));
+        ojoCerradoIcon = new ImageIcon(getClass().getResource("/images/ojo-cerrado.png"));
+        ojoAbiertoIcon = new ImageIcon(getClass().getResource("/images/ojo-abierto.png"));
+
     }
-
+  
     @Override
     public Image getIconImage() {
         Image miIcono = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/logoIcono.png"));
         return miIcono;
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,6 +69,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
         jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         CampoUsuario = new javax.swing.JTextField();
@@ -164,6 +160,15 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
         });
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 20, 30));
 
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ojo-cerrado.png"))); // NOI18N
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, 40, 30));
+
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(java.awt.Color.lightGray);
         jLabel2.setText("Introduzca su usuario");
@@ -205,7 +210,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
                 CampoContraseñaFocusLost(evt);
             }
         });
-        jPanel1.add(CampoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 300, 40));
+        jPanel1.add(CampoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 260, 40));
 
         jButton1.setBackground(new java.awt.Color(102, 39, 40));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -217,7 +222,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 150, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 310, 50));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(java.awt.Color.black);
@@ -289,7 +294,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
 
     private void CampoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoUsuarioMouseClicked
         // TODO add your handling code here:+
-        
+
     }//GEN-LAST:event_CampoUsuarioMouseClicked
 
     private void CampoUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoUsuarioFocusGained
@@ -299,19 +304,19 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
 
     private void CampoUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoUsuarioFocusLost
         // TODO add your handling code here:
-        if(CampoUsuario.getText().isEmpty()){
+        if (CampoUsuario.getText().isEmpty()) {
             jLabel2.setVisible(true);
         }
     }//GEN-LAST:event_CampoUsuarioFocusLost
 
     private void CampoContraseñaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoContraseñaFocusGained
         // TODO add your handling code here:
-          jLabel1.setVisible(false);
+        jLabel1.setVisible(false);
     }//GEN-LAST:event_CampoContraseñaFocusGained
 
     private void CampoContraseñaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CampoContraseñaFocusLost
         // TODO add your handling code here:
-        if(CampoContraseña.getText().isEmpty()){
+        if (CampoContraseña.getText().isEmpty()) {
             jLabel1.setVisible(true);
         }
     }//GEN-LAST:event_CampoContraseñaFocusLost
@@ -324,6 +329,21 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel10MouseClicked
+  
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        // TODO add your handling code here:
+         if (showing) {
+                    // Ocultar la contraseña
+                    CampoContraseña.setEchoChar('*');
+                    jLabel17.setIcon(ojoCerradoIcon);
+                } else {
+                    // Mostrar la contraseña
+                    CampoContraseña.setEchoChar((char) 0);
+                    jLabel17.setIcon(ojoAbiertoIcon);
+                }
+                showing = !showing;
+                
+    }//GEN-LAST:event_jLabel17MouseClicked
 
     /**
      * @param args the command line arguments
@@ -362,7 +382,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField CampoContraseña;
+    public static javax.swing.JPasswordField CampoContraseña;
     private javax.swing.JTextField CampoUsuario;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JButton jButton1;
@@ -375,6 +395,7 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    public static javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -390,4 +411,8 @@ labelFondo.setBorder(new JLabelShadowBorder(50));
     static String contraseña;
     static String tipoEmpleado;
     static int idInicioSesion;
+     public Icon ojoCerradoIcon;
+    public Icon ojoAbiertoIcon;
+    private boolean showing = false;
+    
 }

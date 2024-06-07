@@ -94,7 +94,8 @@ public class CrearTarea extends javax.swing.JFrame {
         ComboBoxEstado = new javax.swing.JComboBox<>();
         CampoEmpleados = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -119,9 +120,9 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel7.setText("Notas:");
         PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 150, -1, -1));
 
-        CampoNotas.setBackground(java.awt.Color.black);
+        CampoNotas.setBackground(java.awt.Color.white);
         CampoNotas.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNotas.setForeground(java.awt.Color.white);
+        CampoNotas.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, 270, -1));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -134,9 +135,9 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel9.setText("Prioridad:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.black);
+        CampoNombre.setBackground(java.awt.Color.white);
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.white);
+        CampoNombre.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -154,7 +155,7 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel17.setText("Empleados disponibles:");
         PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, -1));
 
-        BotonCrearTarea.setBackground(java.awt.Color.black);
+        BotonCrearTarea.setBackground(new java.awt.Color(102, 39, 40));
         BotonCrearTarea.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonCrearTarea.setForeground(java.awt.Color.white);
         BotonCrearTarea.setText("Crear tarea");
@@ -166,9 +167,9 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonCrearTarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 530, 240, 60));
 
-        BotonURL.setBackground(java.awt.Color.black);
+        BotonURL.setBackground(java.awt.Color.white);
         BotonURL.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonURL.setForeground(java.awt.Color.white);
+        BotonURL.setForeground(java.awt.Color.black);
         BotonURL.setText("Añadir foto");
         BotonURL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonURL.addActionListener(new java.awt.event.ActionListener() {
@@ -183,13 +184,13 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel8.setText("Fecha de entrega:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, -1));
 
-        CampoFecEntrega.setBackground(java.awt.Color.black);
+        CampoFecEntrega.setBackground(java.awt.Color.white);
         CampoFecEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFecEntrega.setForeground(java.awt.Color.white);
+        CampoFecEntrega.setForeground(java.awt.Color.black);
         PanelFondo.add(CampoFecEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 250, -1));
 
-        ComboBoxEmpleadoAsignado.setBackground(java.awt.Color.black);
-        ComboBoxEmpleadoAsignado.setForeground(java.awt.Color.white);
+        ComboBoxEmpleadoAsignado.setBackground(java.awt.Color.white);
+        ComboBoxEmpleadoAsignado.setForeground(java.awt.Color.black);
         PanelFondo.add(ComboBoxEmpleadoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 270, 40));
 
         LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
@@ -201,8 +202,8 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 70, 70));
 
-        BotonAgregarEmpleado.setBackground(java.awt.Color.black);
-        BotonAgregarEmpleado.setForeground(java.awt.Color.white);
+        BotonAgregarEmpleado.setBackground(java.awt.Color.white);
+        BotonAgregarEmpleado.setForeground(java.awt.Color.black);
         BotonAgregarEmpleado.setText("Agregar empleado");
         BotonAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,13 +212,13 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, -1, -1));
 
-        ComboBoxPrioridad.setBackground(java.awt.Color.black);
-        ComboBoxPrioridad.setForeground(java.awt.Color.white);
+        ComboBoxPrioridad.setBackground(java.awt.Color.white);
+        ComboBoxPrioridad.setForeground(java.awt.Color.black);
         ComboBoxPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
         PanelFondo.add(ComboBoxPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 250, 40));
 
-        ComboBoxEstado.setBackground(java.awt.Color.black);
-        ComboBoxEstado.setForeground(java.awt.Color.white);
+        ComboBoxEstado.setBackground(java.awt.Color.white);
+        ComboBoxEstado.setForeground(java.awt.Color.black);
         ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrasada", "Pendiente", "Finalizada" }));
         PanelFondo.add(ComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 250, 40));
 
@@ -231,10 +232,21 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel2.setText("Empleados añadidos: ");
         PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 440, -1, 20));
 
-        labelFondo.setBackground(java.awt.Color.black);
-        labelFondo.setForeground(java.awt.Color.white);
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 650));
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel11.setForeground(java.awt.Color.white);
+        jLabel11.setText("x");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 10, 20, 30));
+
+        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setOpaque(true);
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -391,6 +403,11 @@ public class CrearTarea extends javax.swing.JFrame {
         ComboBoxEmpleadoAsignado.removeItemAt(ComboBoxEmpleadoAsignado.getSelectedIndex());
     }//GEN-LAST:event_BotonAgregarEmpleadoActionPerformed
 
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -445,15 +462,16 @@ public class CrearTarea extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFondo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
     String urlImagen;
     String estado;

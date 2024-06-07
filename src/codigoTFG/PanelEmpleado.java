@@ -5,9 +5,14 @@
  */
 package codigoTFG;
 
+import static codigoTFG.PanelAdmin.labelhora;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -24,7 +29,16 @@ public class PanelEmpleado extends javax.swing.JFrame {
         setResizable(false);
         LabelCirculo1.setVisible(false);
         LabelCirculo.setVisible(false);
+        jLabel1.setBackground(new Color(255, 255, 255, 100)); 
         setIconImage(getIconImage());
+        Timer timer = new Timer(0, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                ActualizarHora.actualizarHora(labelhora);
+
+            }
+        });
+        timer.start();
     }
 
     @Override
@@ -50,7 +64,10 @@ public class PanelEmpleado extends javax.swing.JFrame {
         LabelCirculo = new javax.swing.JLabel();
         LabelCirculo1 = new javax.swing.JLabel();
         LabelVolver = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        labelhora = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -58,9 +75,9 @@ public class PanelEmpleado extends javax.swing.JFrame {
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelGestEmp1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelGestEmp1.setForeground(java.awt.Color.white);
+        LabelGestEmp1.setForeground(java.awt.Color.black);
         LabelGestEmp1.setText("VER TAREAS ASIGNADAS");
-        PanelFondo.add(LabelGestEmp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 230, -1));
+        PanelFondo.add(LabelGestEmp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 230, -1));
 
         ImagenTareasAsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portapapeles.png"))); // NOI18N
         ImagenTareasAsig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -75,7 +92,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
                 ImagenTareasAsigMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenTareasAsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, 150));
+        PanelFondo.add(ImagenTareasAsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 130, 150));
 
         ImagenSolicitarBaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bajo-rendimiento.png"))); // NOI18N
         ImagenSolicitarBaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -90,12 +107,12 @@ public class PanelEmpleado extends javax.swing.JFrame {
                 ImagenSolicitarBajaMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenSolicitarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 140, 130));
+        PanelFondo.add(ImagenSolicitarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 140, 130));
 
         LabelGestEmp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LabelGestEmp.setForeground(java.awt.Color.white);
+        LabelGestEmp.setForeground(java.awt.Color.black);
         LabelGestEmp.setText("SOLICITAR BAJA");
-        PanelFondo.add(LabelGestEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 160, -1));
+        PanelFondo.add(LabelGestEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 160, -1));
 
         LabelCirculo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
@@ -107,7 +124,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
                 LabelCirculoMouseExited(evt);
             }
         });
-        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 220, 190));
+        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 220, 190));
 
         LabelCirculo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
@@ -119,7 +136,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
                 LabelCirculo1MouseExited(evt);
             }
         });
-        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 220, 190));
+        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 220, 190));
 
         LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -130,18 +147,39 @@ public class PanelEmpleado extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 70, 70));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 560));
+        jLabel1.setBackground(java.awt.Color.white);
+        jLabel1.setOpaque(true);
+        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 800, 290));
+
+        labelhora.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelhora.setForeground(java.awt.Color.white);
+        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, 150, 30));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(java.awt.Color.white);
+        jLabel10.setText("x");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 10, 20, 30));
+
+        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel6.setOpaque(true);
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -213,6 +251,11 @@ public class PanelEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ImagenTareasAsigMouseClicked
 
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -260,6 +303,9 @@ public class PanelEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel LabelGestEmp1;
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel labelFondo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel6;
+    public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables
 }
