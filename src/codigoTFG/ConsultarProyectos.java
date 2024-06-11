@@ -29,9 +29,10 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
             DefaultTableModel modelo = new DefaultTableModel();
-
+            System.out.println("ALGO ES ALGOOOO");
             if (ConsultarTrabajadores.banderaProyectos == true) {
                 PreparedStatement ps2 = cn.prepareStatement("SELECT * FROM proyectos WHERE ID_JefeProyecto = ?");
+                System.out.println("ENTREEEE" + ConsultarTrabajadores.idSeleccionado);
                 ps2.setString(1, ConsultarTrabajadores.idSeleccionado);
                 ResultSet rs2 = ps2.executeQuery();
 
@@ -53,6 +54,7 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
             } else {
                 PreparedStatement ps = cn.prepareStatement("SELECT * FROM proyectos");
+                System.out.println("PORQUEEEEEEEE");
                 ResultSet rs = ps.executeQuery();
 
                 modelo.addColumn("ID");
@@ -102,14 +104,14 @@ public class ConsultarProyectos extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdConsultarTrabajador = new javax.swing.JTable();
         ComboBoxOrdenar = new javax.swing.JComboBox<>();
         textFiltrarSegunDNI = new javax.swing.JLabel();
         LabelVolver = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,22 +119,9 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
-            }
-        });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 40));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
-
-        tdConsultarTrabajador.setBackground(java.awt.Color.white);
+        tdConsultarTrabajador.setBackground(new java.awt.Color(92, 116, 118));
         tdConsultarTrabajador.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tdConsultarTrabajador.setForeground(java.awt.Color.black);
+        tdConsultarTrabajador.setForeground(java.awt.Color.white);
         tdConsultarTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
@@ -162,7 +151,7 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         textFiltrarSegunDNI.setText("Ordenar por:");
         PanelFondo.add(textFiltrarSegunDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 80, -1, -1));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,8 +171,20 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 10, 20, 30));
 
-        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 40));
+
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
+
+        jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
         PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 790));
 
@@ -200,11 +201,6 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
 
     private void ComboBoxOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxOrdenarActionPerformed
         // TODO add your handling code here:
@@ -332,6 +328,11 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
 
     /**
      * @param args the command line arguments

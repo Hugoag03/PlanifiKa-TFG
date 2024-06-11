@@ -89,7 +89,7 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelFondo.setBackground(new java.awt.Color(102, 39, 40));
+        PanelFondo.setBackground(new java.awt.Color(27, 29, 41));
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,10 +127,11 @@ public class Login extends javax.swing.JFrame {
         jLabel16.setText("manera eficiente y sin complicaciones.");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(102, 39, 40));
+        jButton2.setBackground(new java.awt.Color(26, 44, 68));
         jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton2.setForeground(java.awt.Color.white);
         jButton2.setText("Conocer más");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(89, 192, 145)));
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +183,7 @@ public class Login extends javax.swing.JFrame {
         CampoUsuario.setBackground(java.awt.Color.white);
         CampoUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoUsuario.setForeground(java.awt.Color.black);
-        CampoUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.orange));
+        CampoUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(89, 192, 145)));
         CampoUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 CampoUsuarioFocusGained(evt);
@@ -201,7 +202,7 @@ public class Login extends javax.swing.JFrame {
         CampoContraseña.setBackground(java.awt.Color.white);
         CampoContraseña.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoContraseña.setForeground(java.awt.Color.black);
-        CampoContraseña.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.orange));
+        CampoContraseña.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(89, 192, 145)));
         CampoContraseña.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 CampoContraseñaFocusGained(evt);
@@ -212,10 +213,11 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(CampoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 260, 40));
 
-        jButton1.setBackground(new java.awt.Color(102, 39, 40));
+        jButton1.setBackground(java.awt.Color.white);
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setForeground(java.awt.Color.white);
+        jButton1.setForeground(java.awt.Color.black);
         jButton1.setText("Acceder");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(89, 192, 145)));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,18 +236,17 @@ public class Login extends javax.swing.JFrame {
         labelFondo.setOpaque(true);
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 370, 410));
 
-        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel6.setBackground(new java.awt.Color(26, 46, 68));
         jLabel6.setOpaque(true);
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 530));
 
-        jLabel4.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3295.jpg"))); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(92, 116, 118));
         jLabel4.setOpaque(true);
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 470, 540));
 
         PanelFondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 1050, 530));
 
-        jLabel9.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 48)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Poor Richard", 1, 55)); // NOI18N
         jLabel9.setForeground(java.awt.Color.white);
         jLabel9.setText("Bienvenido a tu Sistema Gestor de Tareas");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));

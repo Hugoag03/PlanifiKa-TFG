@@ -73,8 +73,6 @@ public class CrearTarea extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         PanelFondo = new javax.swing.JPanel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         CampoNotas = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -95,6 +93,8 @@ public class CrearTarea extends javax.swing.JFrame {
         CampoEmpleados = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,27 +102,14 @@ public class CrearTarea extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
-            }
-        });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 40));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
-
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(java.awt.Color.white);
         jLabel7.setText("Notas:");
         PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 150, -1, -1));
 
-        CampoNotas.setBackground(java.awt.Color.white);
+        CampoNotas.setBackground(new java.awt.Color(92, 116, 118));
         CampoNotas.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNotas.setForeground(java.awt.Color.black);
+        CampoNotas.setForeground(java.awt.Color.white);
         PanelFondo.add(CampoNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, 270, -1));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -135,9 +122,9 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel9.setText("Prioridad:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.white);
+        CampoNombre.setBackground(new java.awt.Color(92, 116, 118));
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.black);
+        CampoNombre.setForeground(java.awt.Color.white);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -155,7 +142,7 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel17.setText("Empleados disponibles:");
         PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, -1));
 
-        BotonCrearTarea.setBackground(new java.awt.Color(102, 39, 40));
+        BotonCrearTarea.setBackground(new java.awt.Color(87, 186, 144));
         BotonCrearTarea.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonCrearTarea.setForeground(java.awt.Color.white);
         BotonCrearTarea.setText("Crear tarea");
@@ -167,9 +154,9 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonCrearTarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 530, 240, 60));
 
-        BotonURL.setBackground(java.awt.Color.white);
+        BotonURL.setBackground(new java.awt.Color(92, 116, 118));
         BotonURL.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonURL.setForeground(java.awt.Color.black);
+        BotonURL.setForeground(java.awt.Color.white);
         BotonURL.setText("Añadir foto");
         BotonURL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonURL.addActionListener(new java.awt.event.ActionListener() {
@@ -184,16 +171,16 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel8.setText("Fecha de entrega:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, -1));
 
-        CampoFecEntrega.setBackground(java.awt.Color.white);
+        CampoFecEntrega.setBackground(new java.awt.Color(92, 116, 118));
         CampoFecEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFecEntrega.setForeground(java.awt.Color.black);
+        CampoFecEntrega.setForeground(java.awt.Color.white);
         PanelFondo.add(CampoFecEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 250, -1));
 
-        ComboBoxEmpleadoAsignado.setBackground(java.awt.Color.white);
-        ComboBoxEmpleadoAsignado.setForeground(java.awt.Color.black);
+        ComboBoxEmpleadoAsignado.setBackground(new java.awt.Color(92, 116, 118));
+        ComboBoxEmpleadoAsignado.setForeground(java.awt.Color.white);
         PanelFondo.add(ComboBoxEmpleadoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 270, 40));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,8 +189,8 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 70, 70));
 
-        BotonAgregarEmpleado.setBackground(java.awt.Color.white);
-        BotonAgregarEmpleado.setForeground(java.awt.Color.black);
+        BotonAgregarEmpleado.setBackground(new java.awt.Color(92, 116, 118));
+        BotonAgregarEmpleado.setForeground(java.awt.Color.white);
         BotonAgregarEmpleado.setText("Agregar empleado");
         BotonAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,13 +199,13 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, -1, -1));
 
-        ComboBoxPrioridad.setBackground(java.awt.Color.white);
-        ComboBoxPrioridad.setForeground(java.awt.Color.black);
+        ComboBoxPrioridad.setBackground(new java.awt.Color(92, 116, 118));
+        ComboBoxPrioridad.setForeground(java.awt.Color.white);
         ComboBoxPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
         PanelFondo.add(ComboBoxPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 250, 40));
 
-        ComboBoxEstado.setBackground(java.awt.Color.white);
-        ComboBoxEstado.setForeground(java.awt.Color.black);
+        ComboBoxEstado.setBackground(new java.awt.Color(92, 116, 118));
+        ComboBoxEstado.setForeground(java.awt.Color.white);
         ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrasada", "Pendiente", "Finalizada" }));
         PanelFondo.add(ComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 250, 40));
 
@@ -243,8 +230,20 @@ public class CrearTarea extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 10, 20, 30));
 
-        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
         PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 640));
 
@@ -263,11 +262,6 @@ public class CrearTarea extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
     public static BufferedImage fotoSeleccionada;
     private void BotonURLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonURLActionPerformed
         // TODO add your handling code here:
@@ -407,6 +401,11 @@ public class CrearTarea extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
 
     /**
      * @param args the command line arguments

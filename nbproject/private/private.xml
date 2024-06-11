@@ -3,30 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ejecucion/Iniciar.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ActualizarHora.java</file>
             <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ConsultarProyectos.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ejecucion/BarraProgreso.java</file>
             <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/CrearProyecto.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/EspaciadoTablas.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/PanelGeneral.java</file>
             <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/GestionarProyecto.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/PanelEmpleado.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ShadowPanel.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/Login.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ShadowBorder.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/CrearTarea.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/JLabelShadowBorder.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/Perfil.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ConsultarTareasSueltas.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/CrearTrabajador.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/GestionarTarea.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/PanelAdmin.java</file>
+            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ConsultarSolicitudes.java</file>
             <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/GestionarTrabajador.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/Calendario.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/PanelJefeProyecto.java</file>
+            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/GestionarSolicitud.java</file>
             <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ConsultarTrabajadores.java</file>
-            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/ConsultarTareas.java</file>
+            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/Perfil.java</file>
+            <file>file:/C:/Users/Hugo/OneDrive/Documentos/NetBeansProjects/TFG/src/codigoTFG/GestionarTarea.java</file>
         </group>
     </open-files>
 </project-private>

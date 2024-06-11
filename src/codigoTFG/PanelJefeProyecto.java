@@ -28,7 +28,6 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         setResizable(false);
         LabelCirculo.setVisible(false);
         LabelCirculo1.setVisible(false);
-        jLabel1.setBackground(new Color(255, 255, 255, 100)); 
         setIconImage(getIconImage());
         Timer timer = new Timer(0, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -63,9 +62,12 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         LabelGestProyecto = new javax.swing.JLabel();
         LabelCirculo = new javax.swing.JLabel();
         LabelVolver = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         labelhora = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +75,7 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ImagenCrearProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anadir-evento.png"))); // NOI18N
+        ImagenCrearProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevo-proyecto.png"))); // NOI18N
         ImagenCrearProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenCrearProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,7 +88,7 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
                 ImagenCrearProyectoMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenCrearProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 140, 150));
+        PanelFondo.add(ImagenCrearProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 140, 150));
 
         LabelCirculo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
@@ -98,14 +100,14 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
                 LabelCirculo1MouseExited(evt);
             }
         });
-        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 220, 190));
+        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 220, 190));
 
-        LabelGestProyecto1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelGestProyecto1.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelGestProyecto1.setForeground(java.awt.Color.black);
         LabelGestProyecto1.setText("CREAR PROYECTO");
-        PanelFondo.add(LabelGestProyecto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 180, -1));
+        PanelFondo.add(LabelGestProyecto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 180, -1));
 
-        ImagenGestProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion-de-proyectos.png"))); // NOI18N
+        ImagenGestProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion-de-proyectos (1).png"))); // NOI18N
         ImagenGestProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenGestProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,12 +120,12 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
                 ImagenGestProyectoMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenGestProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 140, 150));
+        PanelFondo.add(ImagenGestProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 140, 150));
 
-        LabelGestProyecto.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelGestProyecto.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelGestProyecto.setForeground(java.awt.Color.black);
         LabelGestProyecto.setText("GESTIONAR PROYECTOS");
-        PanelFondo.add(LabelGestProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 240, -1));
+        PanelFondo.add(LabelGestProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 240, -1));
 
         LabelCirculo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
@@ -135,9 +137,9 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
                 LabelCirculoMouseExited(evt);
             }
         });
-        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 220, 190));
+        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 220, 190));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -146,13 +148,9 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 70, 70));
 
-        jLabel1.setBackground(java.awt.Color.white);
-        jLabel1.setOpaque(true);
-        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 800, 290));
-
         labelhora.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelhora.setForeground(java.awt.Color.white);
-        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, 150, 30));
+        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, 150, 30));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel10.setForeground(java.awt.Color.white);
@@ -165,8 +163,30 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 10, 20, 30));
 
-        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel6.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel3.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel3.setOpaque(true);
+        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 290, 290));
+
+        jLabel2.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel2.setOpaque(true);
+        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 290, 290));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        jLabel6.setBackground(new java.awt.Color(26, 46, 68));
         jLabel6.setOpaque(true);
         PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 550));
 
@@ -246,6 +266,11 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel10MouseClicked
 
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -291,10 +316,13 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCirculo1;
     private javax.swing.JLabel LabelGestProyecto;
     private javax.swing.JLabel LabelGestProyecto1;
+    private javax.swing.JLabel LabelLogo;
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables

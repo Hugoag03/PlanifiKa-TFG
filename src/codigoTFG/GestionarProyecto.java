@@ -74,8 +74,6 @@ public class GestionarProyecto extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         CampoID = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         CampoFechaEntrega = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         CampoNombre = new javax.swing.JTextField();
@@ -91,6 +89,8 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CheckBoxModificar = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,9 +98,10 @@ public class GestionarProyecto extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CampoID.setBackground(java.awt.Color.white);
+        CampoID.setBackground(new java.awt.Color(92, 116, 118));
         CampoID.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoID.setForeground(java.awt.Color.black);
+        CampoID.setForeground(java.awt.Color.white);
+        CampoID.setDisabledTextColor(java.awt.Color.white);
         CampoID.setEnabled(false);
         PanelFondo.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 90, -1));
 
@@ -109,22 +110,10 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel12.setText("ID");
         PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, -1, -1));
 
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
-            }
-        });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 40));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
-
-        CampoFechaEntrega.setBackground(java.awt.Color.white);
+        CampoFechaEntrega.setBackground(new java.awt.Color(92, 116, 118));
         CampoFechaEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaEntrega.setForeground(java.awt.Color.black);
+        CampoFechaEntrega.setForeground(java.awt.Color.white);
+        CampoFechaEntrega.setDisabledTextColor(java.awt.Color.white);
         CampoFechaEntrega.setEnabled(false);
         CampoFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,9 +127,10 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel9.setText("Fecha de entrega:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.white);
+        CampoNombre.setBackground(new java.awt.Color(92, 116, 118));
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.black);
+        CampoNombre.setForeground(java.awt.Color.white);
+        CampoNombre.setDisabledTextColor(java.awt.Color.white);
         CampoNombre.setEnabled(false);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
@@ -149,7 +139,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel10.setText("Nombre:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        BotonAñadirTareas.setBackground(new java.awt.Color(102, 39, 40));
+        BotonAñadirTareas.setBackground(new java.awt.Color(87, 186, 144));
         BotonAñadirTareas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonAñadirTareas.setForeground(java.awt.Color.white);
         BotonAñadirTareas.setText("Añadir tareas al proyecto");
@@ -167,13 +157,14 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel8.setText("Descripción:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, -1));
 
-        CampoDescripcion.setBackground(java.awt.Color.white);
+        CampoDescripcion.setBackground(new java.awt.Color(92, 116, 118));
         CampoDescripcion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDescripcion.setForeground(java.awt.Color.black);
+        CampoDescripcion.setForeground(java.awt.Color.white);
+        CampoDescripcion.setDisabledTextColor(java.awt.Color.white);
         CampoDescripcion.setEnabled(false);
         PanelFondo.add(CampoDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 250, -1));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,7 +173,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 70, 70));
 
-        BotonModificarProyecto.setBackground(new java.awt.Color(102, 39, 40));
+        BotonModificarProyecto.setBackground(new java.awt.Color(87, 186, 144));
         BotonModificarProyecto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonModificarProyecto.setForeground(java.awt.Color.white);
         BotonModificarProyecto.setText("Modificar proyecto");
@@ -200,9 +191,10 @@ public class GestionarProyecto extends javax.swing.JFrame {
         LabelNumeroTareas.setText("0");
         PanelFondo.add(LabelNumeroTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 20, 30));
 
-        CampoIDJefeProyecto.setBackground(java.awt.Color.white);
+        CampoIDJefeProyecto.setBackground(new java.awt.Color(92, 116, 118));
         CampoIDJefeProyecto.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoIDJefeProyecto.setForeground(java.awt.Color.black);
+        CampoIDJefeProyecto.setForeground(java.awt.Color.white);
+        CampoIDJefeProyecto.setDisabledTextColor(java.awt.Color.white);
         CampoIDJefeProyecto.setEnabled(false);
         PanelFondo.add(CampoIDJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 250, -1));
 
@@ -216,9 +208,9 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel1.setText("Tareas añadidas:");
         PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, -1, 30));
 
-        CheckBoxModificar.setBackground(java.awt.Color.white);
+        CheckBoxModificar.setBackground(new java.awt.Color(26, 46, 68));
         CheckBoxModificar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CheckBoxModificar.setForeground(java.awt.Color.black);
+        CheckBoxModificar.setForeground(java.awt.Color.white);
         CheckBoxModificar.setText("Modificar");
         CheckBoxModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CheckBoxModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -239,8 +231,20 @@ public class GestionarProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 20, 30));
 
-        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
         PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 740));
 
@@ -299,11 +303,6 @@ public class GestionarProyecto extends javax.swing.JFrame {
     private void CampoFechaEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoFechaEntregaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoFechaEntregaActionPerformed
-
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
 
 
     private void BotonModificarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarProyectoActionPerformed
@@ -375,6 +374,11 @@ public class GestionarProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
 
     /**
      * @param args the command line arguments

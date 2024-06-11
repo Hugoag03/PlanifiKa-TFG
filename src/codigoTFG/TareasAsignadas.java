@@ -94,36 +94,23 @@ public class TareasAsignadas extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdConsultarTrabajador = new javax.swing.JTable();
         textFiltrarSegunDNI = new javax.swing.JLabel();
         ComboBoxOrdenar = new javax.swing.JComboBox<>();
         LabelVolver = new javax.swing.JLabel();
-        labelFondo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
-            }
-        });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 40));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
-
-        tdConsultarTrabajador.setBackground(java.awt.Color.white);
+        tdConsultarTrabajador.setBackground(new java.awt.Color(92, 116, 118));
         tdConsultarTrabajador.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tdConsultarTrabajador.setForeground(java.awt.Color.black);
+        tdConsultarTrabajador.setForeground(java.awt.Color.white);
         tdConsultarTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null}
@@ -142,9 +129,9 @@ public class TareasAsignadas extends javax.swing.JFrame {
         textFiltrarSegunDNI.setText("Ordenar por:");
         PanelFondo.add(textFiltrarSegunDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, -1, -1));
 
-        ComboBoxOrdenar.setBackground(java.awt.Color.black);
+        ComboBoxOrdenar.setBackground(java.awt.Color.white);
         ComboBoxOrdenar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        ComboBoxOrdenar.setForeground(java.awt.Color.white);
+        ComboBoxOrdenar.setForeground(java.awt.Color.black);
         ComboBoxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Fecha de entrega", "Estado", "Prioridad" }));
         ComboBoxOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +140,7 @@ public class TareasAsignadas extends javax.swing.JFrame {
         });
         PanelFondo.add(ComboBoxOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 80, 190, -1));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -162,8 +149,22 @@ public class TareasAsignadas extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 70, 70));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondotfg.png"))); // NOI18N
-        PanelFondo.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 800));
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 40));
+
+        jLabel6.setBackground(new java.awt.Color(26, 46, 68));
+        jLabel6.setOpaque(true);
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 800));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,11 +179,6 @@ public class TareasAsignadas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
 
     private void ComboBoxOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxOrdenarActionPerformed
         // TODO add your handling code here:
@@ -394,6 +390,11 @@ public class TareasAsignadas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_LabelVolverMouseClicked
 
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -450,8 +451,8 @@ public class TareasAsignadas extends javax.swing.JFrame {
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFondo;
     private javax.swing.JTable tdConsultarTrabajador;
     private javax.swing.JLabel textFiltrarSegunDNI;
     // End of variables declaration//GEN-END:variables

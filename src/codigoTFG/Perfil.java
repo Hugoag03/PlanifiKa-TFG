@@ -115,8 +115,6 @@ public class Perfil extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         PanelFoto = new javax.swing.JPanel();
         LabelImagen = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -142,25 +140,14 @@ public class Perfil extends javax.swing.JFrame {
         CampoFechaInicio = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         LabelCerrarSesion = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
-            }
-        });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 40));
-
-        jLabel8.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setText("PlanifiKa");
-        PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
 
         javax.swing.GroupLayout PanelFotoLayout = new javax.swing.GroupLayout(PanelFoto);
         PanelFoto.setLayout(PanelFotoLayout);
@@ -182,9 +169,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel5.setText("Teléfono:");
         PanelFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, -1, -1));
 
-        CampoAgregadoPor.setBackground(java.awt.Color.white);
+        CampoAgregadoPor.setBackground(new java.awt.Color(92, 116, 118));
         CampoAgregadoPor.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoAgregadoPor.setForeground(new java.awt.Color(147, 63, 63));
+        CampoAgregadoPor.setForeground(java.awt.Color.white);
+        CampoAgregadoPor.setDisabledTextColor(java.awt.Color.white);
         CampoAgregadoPor.setEnabled(false);
         CampoAgregadoPor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,9 +186,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel17.setText("Agregado por:");
         PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
 
-        CampoDireccion.setBackground(java.awt.Color.white);
+        CampoDireccion.setBackground(new java.awt.Color(92, 116, 118));
         CampoDireccion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDireccion.setForeground(new java.awt.Color(147, 63, 63));
+        CampoDireccion.setForeground(java.awt.Color.white);
+        CampoDireccion.setDisabledTextColor(java.awt.Color.white);
         CampoDireccion.setEnabled(false);
         PanelFondo.add(CampoDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 330, -1));
 
@@ -214,21 +203,24 @@ public class Perfil extends javax.swing.JFrame {
         jLabel7.setText("Correo electrónico:");
         PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, -1, -1));
 
-        CampoTelefono.setBackground(java.awt.Color.white);
+        CampoTelefono.setBackground(new java.awt.Color(92, 116, 118));
         CampoTelefono.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoTelefono.setForeground(new java.awt.Color(147, 63, 63));
+        CampoTelefono.setForeground(java.awt.Color.white);
+        CampoTelefono.setDisabledTextColor(java.awt.Color.white);
         CampoTelefono.setEnabled(false);
         PanelFondo.add(CampoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, 330, -1));
 
-        CampoEmail.setBackground(java.awt.Color.white);
+        CampoEmail.setBackground(new java.awt.Color(92, 116, 118));
         CampoEmail.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmail.setForeground(new java.awt.Color(147, 63, 63));
+        CampoEmail.setForeground(java.awt.Color.white);
+        CampoEmail.setDisabledTextColor(java.awt.Color.white);
         CampoEmail.setEnabled(false);
         PanelFondo.add(CampoEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 330, -1));
 
-        CampoDNI.setBackground(java.awt.Color.white);
+        CampoDNI.setBackground(new java.awt.Color(92, 116, 118));
         CampoDNI.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDNI.setForeground(new java.awt.Color(147, 63, 63));
+        CampoDNI.setForeground(java.awt.Color.white);
+        CampoDNI.setDisabledTextColor(java.awt.Color.white);
         CampoDNI.setEnabled(false);
         CampoDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,9 +234,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel9.setText("DNI:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 120, -1, -1));
 
-        CampoNombreCompleto.setBackground(java.awt.Color.white);
+        CampoNombreCompleto.setBackground(new java.awt.Color(92, 116, 118));
         CampoNombreCompleto.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombreCompleto.setForeground(new java.awt.Color(147, 63, 63));
+        CampoNombreCompleto.setForeground(java.awt.Color.white);
+        CampoNombreCompleto.setDisabledTextColor(java.awt.Color.white);
         CampoNombreCompleto.setEnabled(false);
         PanelFondo.add(CampoNombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 330, -1));
 
@@ -253,9 +246,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel10.setText("Nombre completo:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
-        CampoEmpresa.setBackground(java.awt.Color.white);
+        CampoEmpresa.setBackground(new java.awt.Color(92, 116, 118));
         CampoEmpresa.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEmpresa.setForeground(new java.awt.Color(147, 63, 63));
+        CampoEmpresa.setForeground(java.awt.Color.white);
+        CampoEmpresa.setDisabledTextColor(java.awt.Color.white);
         CampoEmpresa.setEnabled(false);
         PanelFondo.add(CampoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 580, 210, -1));
 
@@ -264,9 +258,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel11.setText("Empresa:");
         PanelFondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 550, -1, -1));
 
-        CampoTipo.setBackground(java.awt.Color.white);
+        CampoTipo.setBackground(new java.awt.Color(92, 116, 118));
         CampoTipo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoTipo.setForeground(new java.awt.Color(147, 63, 63));
+        CampoTipo.setForeground(java.awt.Color.white);
+        CampoTipo.setDisabledTextColor(java.awt.Color.white);
         CampoTipo.setEnabled(false);
         PanelFondo.add(CampoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, 210, -1));
 
@@ -275,9 +270,10 @@ public class Perfil extends javax.swing.JFrame {
         jLabel13.setText("Tipo:");
         PanelFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 340, -1, -1));
 
-        CampoEstado.setBackground(java.awt.Color.white);
+        CampoEstado.setBackground(new java.awt.Color(92, 116, 118));
         CampoEstado.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoEstado.setForeground(new java.awt.Color(147, 63, 63));
+        CampoEstado.setForeground(java.awt.Color.white);
+        CampoEstado.setDisabledTextColor(java.awt.Color.white);
         CampoEstado.setEnabled(false);
         CampoEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,9 +302,10 @@ public class Perfil extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, 20, 30));
 
-        CampoFechaInicio.setBackground(java.awt.Color.white);
+        CampoFechaInicio.setBackground(new java.awt.Color(92, 116, 118));
         CampoFechaInicio.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaInicio.setForeground(new java.awt.Color(147, 63, 63));
+        CampoFechaInicio.setForeground(java.awt.Color.white);
+        CampoFechaInicio.setDisabledTextColor(java.awt.Color.white);
         CampoFechaInicio.setEnabled(false);
         PanelFondo.add(CampoFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 480, 210, -1));
 
@@ -317,7 +314,7 @@ public class Perfil extends javax.swing.JFrame {
         jLabel15.setText("Fecha de inicio:");
         PanelFondo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 450, -1, -1));
 
-        LabelCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -326,8 +323,20 @@ public class Perfil extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 640, 70, 70));
 
-        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel6.setForeground(new java.awt.Color(147, 63, 63));
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        jLabel6.setBackground(new java.awt.Color(26, 46, 68));
         jLabel6.setOpaque(true);
         PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 730));
 
@@ -344,11 +353,6 @@ public class Perfil extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
 
     private void CampoDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDNIActionPerformed
         // TODO add your handling code here:
@@ -373,6 +377,11 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -433,10 +442,10 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables

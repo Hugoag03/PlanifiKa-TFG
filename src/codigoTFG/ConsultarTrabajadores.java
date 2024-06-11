@@ -131,7 +131,6 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
                                 banderaProyectos = true;
                                 ConsultarProyectos consultarP = new ConsultarProyectos();
                                 consultarP.setVisible(true);
-
                                 dispose();
                             }
                         } else {
@@ -198,22 +197,22 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
                                 break;
                         }
                     } else {
-                        comp.setBackground(Color.WHITE);
-                        comp.setForeground(Color.BLACK);
+                        comp.setBackground(new Color(92, 116, 118));
+                        comp.setForeground(Color.WHITE);
                     }
 
                 } else {
-                    comp.setBackground(Color.WHITE);
-                    comp.setForeground(Color.BLACK);
+                    comp.setBackground(new Color(92, 116, 118));
+                    comp.setForeground(Color.WHITE);
                 }
                 return comp;
-
             }
-
         };
+
         for (int i = 0; i < tdConsultarTrabajador.getColumnCount(); i++) {
             tdConsultarTrabajador.getColumnModel().getColumn(i).setCellRenderer(renderer);
         }
+
     }
 
     @Override
@@ -247,7 +246,7 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -256,19 +255,20 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, 70, 70));
 
-        CampoDNI.setBackground(java.awt.Color.white);
+        CampoDNI.setBackground(new java.awt.Color(26, 46, 68));
         CampoDNI.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoDNI.setForeground(java.awt.Color.black);
+        CampoDNI.setForeground(java.awt.Color.white);
+        CampoDNI.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
         PanelFondo.add(CampoDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, 430, 40));
 
-        textFiltrarSegunDNI.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        textFiltrarSegunDNI.setFont(new java.awt.Font("Poor Richard", 0, 30)); // NOI18N
         textFiltrarSegunDNI.setForeground(java.awt.Color.white);
         textFiltrarSegunDNI.setText("Se podrá filtrar los trabajadores a partir de su DNI");
-        PanelFondo.add(textFiltrarSegunDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
+        PanelFondo.add(textFiltrarSegunDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, -1, 40));
 
-        tdConsultarTrabajador.setBackground(java.awt.Color.white);
+        tdConsultarTrabajador.setBackground(new java.awt.Color(92, 116, 118));
         tdConsultarTrabajador.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tdConsultarTrabajador.setForeground(java.awt.Color.black);
+        tdConsultarTrabajador.setForeground(new java.awt.Color(255, 255, 255));
         tdConsultarTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null}
@@ -278,7 +278,7 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
             }
         ));
         tdConsultarTrabajador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tdConsultarTrabajador.setGridColor(java.awt.Color.white);
+        tdConsultarTrabajador.setGridColor(new java.awt.Color(87, 186, 144));
         tdConsultarTrabajador.setSelectionBackground(java.awt.Color.white);
         tdConsultarTrabajador.setSelectionForeground(java.awt.Color.black);
         jScrollPane1.setViewportView(tdConsultarTrabajador);
@@ -293,8 +293,8 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 40));
 
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
         jLabel4.setText("PlanifiKa");
         PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 40));
 
@@ -309,10 +309,9 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 10, 20, 30));
 
-        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
-        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
+        PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 810));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -7,8 +7,17 @@ package codigoTFG;
 
 import java.awt.*;
 import java.sql.*;
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Calendar;
+import java.util.Properties;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import org.jdatepicker.impl.*;
 
 /**
  *
@@ -60,8 +69,6 @@ public class CrearProyecto extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         PanelFondo = new javax.swing.JPanel();
-        LabelLogo = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         CampoFechaEntrega = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         CampoNombre = new javax.swing.JTextField();
@@ -76,6 +83,8 @@ public class CrearProyecto extends javax.swing.JFrame {
         LabelNumeroTareas = new javax.swing.JLabel();
         ComboBoxEncargado = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,22 +92,14 @@ public class CrearProyecto extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
-        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+        CampoFechaEntrega.setBackground(new java.awt.Color(92, 116, 118));
+        CampoFechaEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        CampoFechaEntrega.setForeground(java.awt.Color.white);
+        CampoFechaEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelLogoMouseClicked(evt);
+                CampoFechaEntregaMouseClicked(evt);
             }
         });
-        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 40));
-
-        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("PlanifiKa");
-        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 40));
-
-        CampoFechaEntrega.setBackground(java.awt.Color.white);
-        CampoFechaEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoFechaEntrega.setForeground(java.awt.Color.black);
         CampoFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoFechaEntregaActionPerformed(evt);
@@ -111,9 +112,9 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel9.setText("Fecha de entrega:");
         PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
-        CampoNombre.setBackground(java.awt.Color.white);
+        CampoNombre.setBackground(new java.awt.Color(92, 116, 118));
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoNombre.setForeground(java.awt.Color.black);
+        CampoNombre.setForeground(java.awt.Color.white);
         PanelFondo.add(CampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 270, -1));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -126,7 +127,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel10.setText("Nombre:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        BotonAñadirTareas.setBackground(new java.awt.Color(102, 39, 40));
+        BotonAñadirTareas.setBackground(new java.awt.Color(87, 186, 144));
         BotonAñadirTareas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonAñadirTareas.setForeground(java.awt.Color.white);
         BotonAñadirTareas.setText("Añadir tareas al proyecto");
@@ -143,12 +144,13 @@ public class CrearProyecto extends javax.swing.JFrame {
         jLabel8.setText("Descripción:");
         PanelFondo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, -1));
 
-        CampoDescripcion.setBackground(java.awt.Color.white);
+        CampoDescripcion.setBackground(new java.awt.Color(92, 116, 118));
         CampoDescripcion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        CampoDescripcion.setForeground(java.awt.Color.black);
+        CampoDescripcion.setForeground(java.awt.Color.white);
         PanelFondo.add(CampoDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 250, -1));
 
-        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volveratras.png"))); // NOI18N
+        LabelVolver.setBackground(new java.awt.Color(87, 186, 144));
+        LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -157,7 +159,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 70, 70));
 
-        BotonCrearProyecto.setBackground(new java.awt.Color(102, 39, 40));
+        BotonCrearProyecto.setBackground(new java.awt.Color(87, 186, 144));
         BotonCrearProyecto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonCrearProyecto.setForeground(java.awt.Color.white);
         BotonCrearProyecto.setText("Crear proyecto");
@@ -169,7 +171,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(BotonCrearProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, 260, 60));
 
-        CheckTareas.setBackground(new java.awt.Color(147, 63, 63));
+        CheckTareas.setBackground(new java.awt.Color(26, 46, 68));
         CheckTareas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CheckTareas.setForeground(java.awt.Color.white);
         CheckTareas.setText("Tareas añadidas:");
@@ -185,8 +187,8 @@ public class CrearProyecto extends javax.swing.JFrame {
         LabelNumeroTareas.setText("0");
         PanelFondo.add(LabelNumeroTareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 20, 30));
 
-        ComboBoxEncargado.setBackground(java.awt.Color.white);
-        ComboBoxEncargado.setForeground(java.awt.Color.black);
+        ComboBoxEncargado.setBackground(new java.awt.Color(92, 116, 118));
+        ComboBoxEncargado.setForeground(java.awt.Color.white);
         PanelFondo.add(ComboBoxEncargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 260, 40));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -200,8 +202,20 @@ public class CrearProyecto extends javax.swing.JFrame {
         });
         PanelFondo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 20, 30));
 
-        jLabel18.setBackground(new java.awt.Color(147, 63, 63));
-        jLabel18.setForeground(new java.awt.Color(147, 63, 63));
+        jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel4.setText("PlanifiKa");
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
         PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 740));
 
@@ -232,7 +246,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         if (seleccion == 0) {
             try {
                 Connection cn = conexion.Conexion.conectar();
-                PreparedStatement ps = cn.prepareStatement("SELECT * FROM tareas WHERE ID_Proyecto = null");
+                PreparedStatement ps = cn.prepareStatement("SELECT * FROM tareas WHERE ID_Proyecto = NULL");
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     ConsultarTareasSueltas consultarTS = new ConsultarTareasSueltas();
@@ -255,15 +269,18 @@ public class CrearProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoFechaEntregaActionPerformed
 
-    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_LabelLogoMouseClicked
-
 
     private void BotonCrearProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearProyectoActionPerformed
         // TODO add your handling code here:
-        if (CampoNombre.getText() != null && CampoFechaEntrega.getText() != null && CampoDescripcion.getText() != null && ComboBoxEncargado.getSelectedItem().toString() != null) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        fechaSeleccionada = LocalDate.parse(CampoFechaEntrega.getText(), formatter);
+        fechaActual = LocalDate.now();
+
+        if (fechaSeleccionada.isBefore(fechaActual)) {
+            JOptionPane.showMessageDialog(null, "No puedes elegir una fecha de entrega anterior a la fecha actual");
+        } else if (!CampoNombre.getText().isEmpty() && !CampoFechaEntrega.getText().isEmpty() && !CampoDescripcion.getText().isEmpty() && !ComboBoxEncargado.getSelectedItem().toString().isEmpty()) {
 
             if (CheckTareas.isSelected()) {
 
@@ -315,6 +332,8 @@ public class CrearProyecto extends javax.swing.JFrame {
                     }
 
                     JOptionPane.showMessageDialog(null, "Proyecto creado con éxito");
+                    PanelJefeProyecto panelJP = new PanelJefeProyecto();
+                    panelJP.setVisible(true);
                     this.dispose();
 
                 } catch (SQLException e) {
@@ -324,9 +343,10 @@ public class CrearProyecto extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Debes confirmar que las tareas necesarias han sido añadidas");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos");
         }
+
     }//GEN-LAST:event_BotonCrearProyectoActionPerformed
 
     private void CheckTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckTareasActionPerformed
@@ -337,6 +357,64 @@ public class CrearProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
+
+    private void CampoFechaEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoFechaEntregaMouseClicked
+        // TODO add your handling code here:
+        JDialog dialog = new JDialog();
+        dialog.setTitle("Seleccione una fecha");
+        dialog.setModal(true);
+        dialog.setUndecorated(true); 
+        dialog.setLayout(new BorderLayout());
+
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Hoy");
+        p.put("text.month", "Mes");
+        p.put("text.year", "Año");
+
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+
+        dialog.add(datePicker, BorderLayout.CENTER);
+
+        datePicker.addActionListener(e1 -> {
+            CampoFechaEntrega.setText(datePicker.getJFormattedTextField().getText());
+            dialog.dispose();
+        });
+
+        Point location = CampoFechaEntrega.getLocationOnScreen();
+        dialog.setLocation(location.x, location.y + CampoFechaEntrega.getHeight());
+
+        dialog.pack();
+
+        dialog.setVisible(true);
+    }//GEN-LAST:event_CampoFechaEntregaMouseClicked
+
+    public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
+
+        private String datePattern = "yyyy-MM-dd";
+        private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            return dateFormatter.parseObject(text);
+        }
+
+        @Override
+        public String valueToString(Object value) throws ParseException {
+            if (value != null) {
+                Calendar cal = (Calendar) value;
+                return dateFormatter.format(cal.getTime());
+            }
+            return "";
+
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -402,4 +480,7 @@ public class CrearProyecto extends javax.swing.JFrame {
     String tipoEmpleado;
     int idProyecto;
     int idJefeP;
+
+    LocalDate fechaSeleccionada;
+    LocalDate fechaActual;
 }

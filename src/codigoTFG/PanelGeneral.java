@@ -32,7 +32,6 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo2.setVisible(false);
         LabelCirculo3.setVisible(false);
         setIconImage(getIconImage());
-        jLabel1.setBackground(new Color(255, 255, 255, 100)); 
         Timer timer = new Timer(0, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -89,8 +88,13 @@ public class PanelGeneral extends javax.swing.JFrame {
         LabelCirculo2 = new javax.swing.JLabel();
         LabelCirculo3 = new javax.swing.JLabel();
         LabelCerrarSesion = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         labelhora = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        LabelLogo = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,12 +103,12 @@ public class PanelGeneral extends javax.swing.JFrame {
         PanelFondo.setMinimumSize(new java.awt.Dimension(1266, 587));
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 36)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Poor Richard", 1, 48)); // NOI18N
         jLabel9.setForeground(java.awt.Color.white);
         jLabel9.setText("¿Qué departamento desea visitar?");
-        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
-        ImagenJefeProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lider.png"))); // NOI18N
+        ImagenJefeProyecto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jefeproyecto.png"))); // NOI18N
         ImagenJefeProyecto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenJefeProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -117,7 +121,7 @@ public class PanelGeneral extends javax.swing.JFrame {
                 ImagenJefeProyectoMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 140, 150));
+        PanelFondo.add(ImagenJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 140, 150));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel10.setForeground(java.awt.Color.white);
@@ -128,9 +132,9 @@ public class PanelGeneral extends javax.swing.JFrame {
                 jLabel10MouseClicked(evt);
             }
         });
-        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 20, 30));
+        PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, 20, 30));
 
-        ImagenPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/perfil.png"))); // NOI18N
+        ImagenPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/perfil_1.png"))); // NOI18N
         ImagenPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -145,7 +149,7 @@ public class PanelGeneral extends javax.swing.JFrame {
         });
         PanelFondo.add(ImagenPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 220, 140, 130));
 
-        ImagenEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empleados.png"))); // NOI18N
+        ImagenEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empleado_1.png"))); // NOI18N
         ImagenEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,9 +162,9 @@ public class PanelGeneral extends javax.swing.JFrame {
                 ImagenEmpleadoMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 140, 130));
+        PanelFondo.add(ImagenEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 140, 130));
 
-        ImagenAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/admin.png"))); // NOI18N
+        ImagenAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/admin_2.png"))); // NOI18N
         ImagenAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImagenAdmin.setFocusable(false);
         ImagenAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,64 +178,93 @@ public class PanelGeneral extends javax.swing.JFrame {
                 ImagenAdminMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 140, 140));
+        PanelFondo.add(ImagenAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 140, 140));
 
-        LabelJefeProyecto.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelJefeProyecto.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelJefeProyecto.setForeground(java.awt.Color.black);
         LabelJefeProyecto.setText("JEFES DE PROYECTO");
-        PanelFondo.add(LabelJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
+        PanelFondo.add(LabelJefeProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 190, -1));
 
-        LabelPerfil.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelPerfil.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelPerfil.setForeground(java.awt.Color.black);
         LabelPerfil.setText("VER PERFIL");
-        PanelFondo.add(LabelPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 390, 110, -1));
+        PanelFondo.add(LabelPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 390, 120, -1));
 
-        LabelEmpleado.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelEmpleado.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelEmpleado.setForeground(java.awt.Color.black);
         LabelEmpleado.setText("EMPLEADOS ");
-        PanelFondo.add(LabelEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 120, -1));
+        PanelFondo.add(LabelEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 470, 130, -1));
 
-        LabelAdmin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        LabelAdmin.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelAdmin.setForeground(java.awt.Color.black);
         LabelAdmin.setText("ADMINISTRADORES");
-        PanelFondo.add(LabelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+        PanelFondo.add(LabelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 190, -1));
 
         LabelCirculo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
-        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 220, 190));
+        PanelFondo.add(LabelCirculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 220, 190));
 
         LabelCirculo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
-        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 220, 190));
+        PanelFondo.add(LabelCirculo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 220, 190));
 
         LabelCirculo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
-        PanelFondo.add(LabelCirculo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 220, 190));
+        PanelFondo.add(LabelCirculo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 220, 190));
 
         LabelCirculo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
         PanelFondo.add(LabelCirculo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 190, 220, 190));
 
-        LabelCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrar-sesion.png"))); // NOI18N
+        LabelCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrar-sesion (1).png"))); // NOI18N
         LabelCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LabelCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LabelCerrarSesionMouseClicked(evt);
             }
         });
-        PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 70));
-
-        jLabel1.setBackground(java.awt.Color.white);
-        jLabel1.setOpaque(true);
-        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 1130, 280));
+        PanelFondo.add(LabelCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 70, 70));
 
         labelhora.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelhora.setForeground(java.awt.Color.white);
-        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 440, 150, 30));
+        PanelFondo.add(labelhora, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 610, 150, 30));
 
-        jLabel6.setBackground(new java.awt.Color(147, 63, 63));
+        jLabel5.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel5.setOpaque(true);
+        PanelFondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 170, 290, 290));
+
+        jLabel4.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel4.setOpaque(true);
+        PanelFondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 290, 290));
+
+        jLabel3.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel3.setOpaque(true);
+        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 290, 290));
+
+        jLabel2.setBackground(new java.awt.Color(92, 116, 118));
+        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        jLabel2.setOpaque(true);
+        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 290, 290));
+
+        LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoIcono.png"))); // NOI18N
+        LabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelLogoMouseClicked(evt);
+            }
+        });
+        PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel7.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(87, 186, 144));
+        jLabel7.setText("PlanifiKa");
+        PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 40));
+
+        jLabel6.setBackground(new java.awt.Color(26, 46, 68));
         jLabel6.setOpaque(true);
-        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 590));
+        PanelFondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,89 +274,11 @@ public class PanelGeneral extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ImagenPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseClicked
-        // TODO add your handling code here:
-        Perfil perfil = new Perfil();
-        perfil.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ImagenPerfilMouseClicked
-
-    private void ImagenAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseEntered
-        // TODO add your handling code here:
-        LabelCirculo.setVisible(true);
-    }//GEN-LAST:event_ImagenAdminMouseEntered
-
-    private void ImagenAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseExited
-        // TODO add your handling code here:
-        LabelCirculo.setVisible(false);
-    }//GEN-LAST:event_ImagenAdminMouseExited
-
-    private void ImagenJefeProyectoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseEntered
-        // TODO add your handling code here:
-        LabelCirculo1.setVisible(true);
-    }//GEN-LAST:event_ImagenJefeProyectoMouseEntered
-
-    private void ImagenJefeProyectoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseExited
-        // TODO add your handling code here:
-        LabelCirculo1.setVisible(false);
-    }//GEN-LAST:event_ImagenJefeProyectoMouseExited
-
-    private void ImagenEmpleadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseEntered
-        // TODO add your handling code here:
-        LabelCirculo2.setVisible(true);
-    }//GEN-LAST:event_ImagenEmpleadoMouseEntered
-
-    private void ImagenEmpleadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseExited
-        // TODO add your handling code here:
-        LabelCirculo2.setVisible(false);
-    }//GEN-LAST:event_ImagenEmpleadoMouseExited
-
-    private void ImagenPerfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseEntered
-        // TODO add your handling code here:
-        LabelCirculo3.setVisible(true);
-    }//GEN-LAST:event_ImagenPerfilMouseEntered
-
-    private void ImagenPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseExited
-        // TODO add your handling code here:
-        LabelCirculo3.setVisible(false);
-    }//GEN-LAST:event_ImagenPerfilMouseExited
-
-    private void ImagenAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseClicked
-        // TODO add your handling code here:
-        if (Login.tipoEmpleado.equals("Empleado") || Login.tipoEmpleado.equals("JefeProyecto")) {
-            JOptionPane.showMessageDialog(null, "No tienes acceso a este departamento");
-        } else {
-            PanelAdmin panelA = new PanelAdmin();
-            panelA.setVisible(true);
-            this.dispose();
-        }
-
-    }//GEN-LAST:event_ImagenAdminMouseClicked
-
-    private void ImagenJefeProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseClicked
-        // TODO add your handling code here:
-        if (Login.tipoEmpleado.equals("Empleado")) {
-            JOptionPane.showMessageDialog(null, "No tienes acceso a este departamento");
-        } else {
-            PanelJefeProyecto panelJP = new PanelJefeProyecto();
-            panelJP.setVisible(true);
-            this.dispose();
-        }
-
-    }//GEN-LAST:event_ImagenJefeProyectoMouseClicked
-
-    private void ImagenEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseClicked
-        // TODO add your handling code here:
-        PanelEmpleado panelE = new PanelEmpleado();
-        panelE.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ImagenEmpleadoMouseClicked
 
     private void LabelCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelCerrarSesionMouseClicked
         // TODO add your handling code here:
@@ -340,6 +295,91 @@ public class PanelGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void ImagenPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseExited
+        // TODO add your handling code here:
+        LabelCirculo3.setVisible(false);
+    }//GEN-LAST:event_ImagenPerfilMouseExited
+
+    private void ImagenPerfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseEntered
+        // TODO add your handling code here:
+        LabelCirculo3.setVisible(true);
+    }//GEN-LAST:event_ImagenPerfilMouseEntered
+
+    private void ImagenPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenPerfilMouseClicked
+        // TODO add your handling code here:
+        Perfil perfil = new Perfil();
+        perfil.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ImagenPerfilMouseClicked
+
+    private void ImagenAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseExited
+        // TODO add your handling code here:
+        LabelCirculo.setVisible(false);
+    }//GEN-LAST:event_ImagenAdminMouseExited
+
+    private void ImagenAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseEntered
+        // TODO add your handling code here:
+        LabelCirculo.setVisible(true);
+    }//GEN-LAST:event_ImagenAdminMouseEntered
+
+    private void ImagenAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAdminMouseClicked
+        // TODO add your handling code here:
+        if (Login.tipoEmpleado.equals("Empleado") || Login.tipoEmpleado.equals("JefeProyecto")) {
+            JOptionPane.showMessageDialog(null, "No tienes acceso a este departamento");
+        } else {
+            PanelAdmin panelA = new PanelAdmin();
+            panelA.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_ImagenAdminMouseClicked
+
+    private void ImagenJefeProyectoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseExited
+        // TODO add your handling code here:
+        LabelCirculo1.setVisible(false);
+    }//GEN-LAST:event_ImagenJefeProyectoMouseExited
+
+    private void ImagenJefeProyectoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseEntered
+        // TODO add your handling code here:
+        LabelCirculo1.setVisible(true);
+    }//GEN-LAST:event_ImagenJefeProyectoMouseEntered
+
+    private void ImagenJefeProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenJefeProyectoMouseClicked
+        // TODO add your handling code here:
+        if (Login.tipoEmpleado.equals("Empleado")) {
+            JOptionPane.showMessageDialog(null, "No tienes acceso a este departamento");
+        } else {
+            PanelJefeProyecto panelJP = new PanelJefeProyecto();
+            panelJP.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_ImagenJefeProyectoMouseClicked
+
+    private void ImagenEmpleadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseExited
+        // TODO add your handling code here:
+        LabelCirculo2.setVisible(false);
+    }//GEN-LAST:event_ImagenEmpleadoMouseExited
+
+    private void ImagenEmpleadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseEntered
+        // TODO add your handling code here:
+        LabelCirculo2.setVisible(true);
+    }//GEN-LAST:event_ImagenEmpleadoMouseEntered
+
+    private void ImagenEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenEmpleadoMouseClicked
+        // TODO add your handling code here:
+        if (Login.tipoEmpleado.equals("JefeProyecto")) {
+            JOptionPane.showMessageDialog(null, "No tienes acceso a este departamento");
+        }else{
+            PanelEmpleado panelE = new PanelEmpleado();
+            panelE.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_ImagenEmpleadoMouseClicked
+
+    private void LabelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelLogoMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_LabelLogoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -390,11 +430,16 @@ public class PanelGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCirculo3;
     private javax.swing.JLabel LabelEmpleado;
     private javax.swing.JLabel LabelJefeProyecto;
+    private javax.swing.JLabel LabelLogo;
     private javax.swing.JLabel LabelPerfil;
     javax.swing.JPanel PanelFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables
