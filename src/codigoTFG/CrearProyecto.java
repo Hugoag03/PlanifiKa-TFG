@@ -302,7 +302,7 @@ public class CrearProyecto extends javax.swing.JFrame {
 
                     PreparedStatement ps = cn.prepareStatement("INSERT INTO proyectos (Nombre, Descripcion, FechaEntrega, ID_JefeProyecto) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
-                    ps.setString(1, CampoFechaEntrega.getText());
+                    ps.setString(1, CampoNombre.getText());
                     ps.setString(2, CampoDescripcion.getText());
                     ps.setString(3, CampoFechaEntrega.getText());
                     ps.setInt(4, idJefeP);

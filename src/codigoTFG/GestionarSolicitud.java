@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,7 +35,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
 
-            PreparedStatement ps = cn.prepareStatement("SELECT ID, Titulo, Mensaje, Fecha, URLArchivoAdjunto, ID_Empleado, ID_Administrador FROM solicitudes WHERE ID = ?");
+            PreparedStatement ps = cn.prepareStatement("SELECT ID, Titulo, Mensaje, Fecha, Estado, URLArchivoAdjunto, ID_Empleado, ID_Administrador FROM solicitudes WHERE ID = ?");
             ps.setString(1, ConsultarSolicitudes.idSeleccionado);
 
             ResultSet rs = ps.executeQuery();
@@ -44,9 +45,10 @@ public class GestionarSolicitud extends javax.swing.JFrame {
                 CampoTitulo.setText(rs.getString(2));
                 CampoMensaje.setText(rs.getString(3));
                 CampoFecha.setText(rs.getString(4));
-                jLabel1.setText(rs.getString(5));
-                CampoIDEmpleado.setText(rs.getString(6));
-                CampoIDAdmin.setText(rs.getString(7));
+                ComboBoxEstado.setSelectedItem(rs.getString(5));
+                jLabel1.setText(rs.getString(6));
+                CampoIDEmpleado.setText(rs.getString(7));
+                CampoIDAdmin.setText(rs.getString(8));
             }
 
         } catch (SQLException e) {
@@ -262,6 +264,8 @@ public class GestionarSolicitud extends javax.swing.JFrame {
             }
         });
         jPanel1.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel1.setForeground(java.awt.Color.white);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 260, 30));
 
         jLabel19.setBackground(new java.awt.Color(26, 46, 68));
@@ -294,10 +298,16 @@ public class GestionarSolicitud extends javax.swing.JFrame {
             ps.setString(2, CampoMensaje.getText());
             ps.setString(3, CampoFecha.getText());
             ps.setString(4, ComboBoxEstado.getSelectedItem().toString());
-            ps.setString(5, urlImagen);
+            ps.setString(5, jLabel1.getText());
             ps.setString(6, CampoID.getText());
 
             ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Solicitud actualizada con éxito");
+            ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+            consultarT.setVisible(true);
+            this.dispose();
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -306,6 +316,8 @@ public class GestionarSolicitud extends javax.swing.JFrame {
 
     private void LabelVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelVolverMouseClicked
         // TODO add your handling code here:
+        ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+        consultarT.setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_LabelVolverMouseClicked
@@ -314,7 +326,6 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (CheckBoxModificar.isSelected()) {
             CampoTitulo.setEnabled(true);
-            CampoFecha.setEnabled(true);
             CampoMensaje.setEnabled(true);
             ComboBoxEstado.setEnabled(true);
             BotonModificarTarea.setEnabled(true);
@@ -322,7 +333,6 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         }
         if (!CheckBoxModificar.isSelected()) {
             CampoTitulo.setEnabled(false);
-            CampoFecha.setEnabled(false);
             CampoMensaje.setEnabled(false);
             ComboBoxEstado.setEnabled(false);
             BotonModificarTarea.setEnabled(false);

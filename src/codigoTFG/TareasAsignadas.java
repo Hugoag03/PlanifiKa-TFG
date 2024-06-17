@@ -84,6 +84,51 @@ public class TareasAsignadas extends javax.swing.JFrame {
         return miIcono;
     }
 
+     public void cambiarColor() {
+        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                    boolean isSelected, boolean hasFocus,
+                    int row, int column) {
+                Component comp = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+                if (column == 4) {
+                    Object cellValue = table.getValueAt(row, column);
+                    if (cellValue != null) {
+                        String estado = cellValue.toString();
+                        switch (estado) {
+                            case "Retrasada":
+                                comp.setForeground(Color.RED);
+                                break;
+                            case "Pendiente":
+                                comp.setForeground(Color.ORANGE);
+                                break;
+                            case "Finalizada":
+                                comp.setForeground(Color.GREEN);
+                                break;
+                            default:
+                                comp.setForeground(Color.WHITE);
+                                break;
+                        }
+                    } else {
+                        comp.setBackground(new Color(92, 116, 118));
+                        comp.setForeground(Color.WHITE);
+                    }
+
+                } else {
+                    comp.setBackground(new Color(92, 116, 118));
+                    comp.setForeground(Color.WHITE);
+                }
+                return comp;
+
+            }
+
+        };
+        for (int i = 0; i < tdConsultarTrabajador.getColumnCount(); i++) {
+            tdConsultarTrabajador.getColumnModel().getColumn(i).setCellRenderer(renderer);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -358,6 +403,7 @@ public class TareasAsignadas extends javax.swing.JFrame {
             }
 
         });
+        cambiarColor();
     }
 
     public void comprobarTipo() {

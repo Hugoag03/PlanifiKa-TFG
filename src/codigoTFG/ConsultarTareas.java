@@ -63,7 +63,7 @@ public class ConsultarTareas extends javax.swing.JFrame {
             tdConsultarTrabajador.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
             guardarId();
-            
+
             sorter = new TableRowSorter<>(modelo);
             tdConsultarTrabajador.setRowSorter(sorter);
             cn.close();
@@ -71,11 +71,10 @@ public class ConsultarTareas extends javax.swing.JFrame {
             System.err.println("Error en la conexion a la BBDD" + e.getMessage());
         }
 
-   
     }
-    
-    public void cambiarColor(){
-            DefaultTableCellRenderer renderer = new DefaultTableCellRenderer() {
+
+    public void cambiarColor() {
+        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value,
                     boolean isSelected, boolean hasFocus,
@@ -107,7 +106,7 @@ public class ConsultarTareas extends javax.swing.JFrame {
 
                 } else {
                     comp.setBackground(new Color(92, 116, 118));
-                        comp.setForeground(Color.WHITE);
+                    comp.setForeground(Color.WHITE);
                 }
                 return comp;
 
@@ -169,8 +168,8 @@ public class ConsultarTareas extends javax.swing.JFrame {
             }
         ));
         tdConsultarTrabajador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tdConsultarTrabajador.setSelectionBackground(java.awt.Color.white);
-        tdConsultarTrabajador.setSelectionForeground(java.awt.Color.black);
+        tdConsultarTrabajador.setSelectionBackground(new java.awt.Color(92, 116, 118));
+        tdConsultarTrabajador.setSelectionForeground(java.awt.Color.white);
         jScrollPane1.setViewportView(tdConsultarTrabajador);
 
         PanelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 1200, 550));
@@ -395,10 +394,26 @@ public class ConsultarTareas extends javax.swing.JFrame {
                     int filaSeleccionada = tdConsultarTrabajador.getSelectedRow();
                     idSeleccionado = tdConsultarTrabajador.getValueAt(filaSeleccionada, 0).toString();
                     int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion", "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Gestionar tarea", "Ver empleados asociadas"}, null);
+
+                    Connection cn = conexion.Conexion.conectar();
+
                     if (seleccion == 0) {
-                        GestionarTarea gestionarT = new GestionarTarea();
-                        gestionarT.setVisible(true);
-                        dispose();
+                        try {
+                            PreparedStatement ps = cn.prepareStatement("SELECT Estado FROM tareas WHERE ID = ?");
+                            ps.setString(1, idSeleccionado);
+                            ResultSet rs = ps.executeQuery();
+                            if (rs.next()) {
+                                if (rs.getString(1).equals("Finalizada")) {
+                                    JOptionPane.showMessageDialog(null, "Esta tarea está finalizada");
+                                } else {
+                                    GestionarTarea gestionarT = new GestionarTarea();
+                                    gestionarT.setVisible(true);
+                                    dispose();
+                                }
+                            }
+                        } catch (SQLException e2) {
+                            e2.printStackTrace();
+                        }
                     } else if (seleccion == 1) {
                         bandera = true;
                         ConsultarTrabajadores consultarT = new ConsultarTrabajadores();

@@ -29,11 +29,11 @@ public class ConsultarProyectos extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
             DefaultTableModel modelo = new DefaultTableModel();
-            System.out.println("ALGO ES ALGOOOO");
             if (ConsultarTrabajadores.banderaProyectos == true) {
+
                 PreparedStatement ps2 = cn.prepareStatement("SELECT * FROM proyectos WHERE ID_JefeProyecto = ?");
-                System.out.println("ENTREEEE" + ConsultarTrabajadores.idSeleccionado);
                 ps2.setString(1, ConsultarTrabajadores.idSeleccionado);
+                System.out.println(ConsultarTrabajadores.idSeleccionado);
                 ResultSet rs2 = ps2.executeQuery();
 
                 modelo.addColumn("ID");
@@ -51,10 +51,18 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
                     modelo.addRow(new Object[]{id, nombre, descripcion, fechaEntrega, id_jefeProyecto});
                 }
+                
+                 tdConsultarTrabajador.setModel(modelo);
+                tdConsultarTrabajador.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+                guardarId();
+
+                sorter = new TableRowSorter<>(modelo);
+                tdConsultarTrabajador.setRowSorter(sorter);
+                cn.close();
 
             } else {
                 PreparedStatement ps = cn.prepareStatement("SELECT * FROM proyectos");
-                System.out.println("PORQUEEEEEEEE");
                 ResultSet rs = ps.executeQuery();
 
                 modelo.addColumn("ID");
@@ -312,13 +320,15 @@ public class ConsultarProyectos extends javax.swing.JFrame {
 
     private void LabelVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelVolverMouseClicked
         // TODO add your handling code here:
-        if (ConsultarTrabajadores.banderaProyectos == true) {
-            ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
-            consultarT.setVisible(true);
-            this.dispose();
-        } else {
+        
+        if (PanelJefeProyecto.bandera == false) {
             PanelJefeProyecto panelJP = new PanelJefeProyecto();
             panelJP.setVisible(true);
+            this.dispose();
+            PanelJefeProyecto.bandera = true;
+        } else {
+            ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+            consultarT.setVisible(true);
             this.dispose();
         }
 

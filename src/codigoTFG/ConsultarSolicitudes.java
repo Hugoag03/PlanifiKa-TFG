@@ -87,11 +87,12 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
         }
     }
 
-     @Override
+    @Override
     public Image getIconImage() {
         Image miIcono = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/logoIcono.png"));
         return miIcono;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -355,13 +356,24 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
                     int filaSeleccionada = tdConsultarTrabajador.getSelectedRow();
+
                     idSeleccionado = tdConsultarTrabajador.getValueAt(filaSeleccionada, 0).toString();
-                    if (estado.equals("Finalizada") || PanelEmpleado.bandera == false) {
-                        JOptionPane.showMessageDialog(null, "Esta solicitud está finalizada. Si desea tratar otro tema, envie una nueva solicitud");
-                    } else {
-                        GestionarSolicitud gestionarS = new GestionarSolicitud();
-                        gestionarS.setVisible(true);
-                        dispose();
+                    Connection cn = conexion.Conexion.conectar();
+                    try {
+                        PreparedStatement ps = cn.prepareStatement("SELECT Estado FROM solicitudes WHERE ID = ?");
+                        ps.setString(1, idSeleccionado);
+                        ResultSet rs = ps.executeQuery();
+                        if (rs.next()) {
+                            if (rs.getString(1).equals("Finalizada") || PanelEmpleado.bandera == false) {
+                                JOptionPane.showMessageDialog(null, "Esta solicitud está finalizada. Si desea tratar otro tema, envie una nueva solicitud");
+                            } else {
+                                GestionarSolicitud gestionarS = new GestionarSolicitud();
+                                gestionarS.setVisible(true);
+                                dispose();
+                            }
+                        }
+                    } catch (SQLException e2) {
+                        e2.printStackTrace();
                     }
 
                 }
@@ -374,8 +386,8 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
     private void LabelVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelVolverMouseClicked
         // TODO add your handling code here:
         if (PanelEmpleado.bandera == true) {
-            PanelAdmin panelA = new PanelAdmin();
-            panelA.setVisible(true);
+            ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+            consultarT.setVisible(true);
             this.dispose();
         } else {
             PanelEmpleado panelE = new PanelEmpleado();

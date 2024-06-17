@@ -43,19 +43,8 @@ public class GestionarTrabajador extends javax.swing.JFrame {
         setIconImage(getIconImage());
 
         Connection cn = conexion.Conexion.conectar();
+        
         try {
-
-            PreparedStatement ps = cn.prepareStatement("SELECT Nombre, Apellidos FROM usuarios WHERE Tipo = ?");
-            ps.setString(1, "Administrador");
-
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                ComboBoxAgregadoPor.addItem(rs.getString(1) + " " + rs.getString(2));
-            }
-
-            rs.close();
-            ps.close();
 
             PreparedStatement ps2 = cn.prepareStatement("SELECT * FROM usuarios WHERE ID = ?");
             ps2.setString(1, ConsultarTrabajadores.idSeleccionado);
@@ -114,8 +103,6 @@ public class GestionarTrabajador extends javax.swing.JFrame {
             LabelURL.setText(urlImagen);
             CampoID.setText(id);
             CampoEmpresa.setText(empresa);
-            
-            
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -543,7 +530,7 @@ public class GestionarTrabajador extends javax.swing.JFrame {
             ps.setString(13, ConsultarTrabajadores.idSeleccionado);
 
             ps.executeUpdate();
-            
+
             JOptionPane.showMessageDialog(null, "Trabajador modificado con éxito");
             ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
             consultarT.setVisible(true);
@@ -567,7 +554,6 @@ public class GestionarTrabajador extends javax.swing.JFrame {
             BotonInactivo.setEnabled(true);
             ComboTipo.setEnabled(true);
             CampoEmpresa.setEnabled(true);
-            ComboBoxAgregadoPor.setEnabled(true);
             BotonFoto.setEnabled(true);
             BotonModificarEmpleado.setEnabled(true);
         }
@@ -581,7 +567,6 @@ public class GestionarTrabajador extends javax.swing.JFrame {
             BotonInactivo.setEnabled(false);
             ComboTipo.setEnabled(false);
             CampoEmpresa.setEnabled(false);
-            ComboBoxAgregadoPor.setEnabled(false);
             BotonFoto.setEnabled(false);
             BotonModificarEmpleado.setEnabled(false);
         }
@@ -712,6 +697,7 @@ public class GestionarTrabajador extends javax.swing.JFrame {
         // TODO add your handling code here:
         ConsultarSolicitudes consultarS = new ConsultarSolicitudes();
         consultarS.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonSolicitudesActionPerformed
 
     private void CampoIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIDActionPerformed

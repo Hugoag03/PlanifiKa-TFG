@@ -5,8 +5,10 @@
  */
 package codigoTFG;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -17,11 +19,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Properties;
 import javax.imageio.ImageIO;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 import sun.security.rsa.RSACore;
 
 /**
@@ -95,6 +107,7 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         LabelLogo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,12 +128,12 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel13.setForeground(java.awt.Color.white);
         jLabel13.setText("Estado:");
-        PanelFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
+        PanelFondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel9.setForeground(java.awt.Color.white);
         jLabel9.setText("Prioridad:");
-        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, -1));
+        PanelFondo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, -1, -1));
 
         CampoNombre.setBackground(new java.awt.Color(92, 116, 118));
         CampoNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -135,12 +148,12 @@ public class CrearTarea extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel16.setForeground(java.awt.Color.white);
         jLabel16.setText("URL archivo adjunto:");
-        PanelFondo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
+        PanelFondo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel17.setForeground(java.awt.Color.white);
         jLabel17.setText("Empleados disponibles:");
-        PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, -1));
+        PanelFondo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, -1, -1));
 
         BotonCrearTarea.setBackground(new java.awt.Color(87, 186, 144));
         BotonCrearTarea.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -164,7 +177,7 @@ public class CrearTarea extends javax.swing.JFrame {
                 BotonURLActionPerformed(evt);
             }
         });
-        PanelFondo.add(BotonURL, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 260, -1));
+        PanelFondo.add(BotonURL, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 260, -1));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
@@ -174,11 +187,21 @@ public class CrearTarea extends javax.swing.JFrame {
         CampoFecEntrega.setBackground(new java.awt.Color(92, 116, 118));
         CampoFecEntrega.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         CampoFecEntrega.setForeground(java.awt.Color.white);
+        CampoFecEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CampoFecEntregaMouseClicked(evt);
+            }
+        });
+        CampoFecEntrega.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoFecEntregaActionPerformed(evt);
+            }
+        });
         PanelFondo.add(CampoFecEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 250, -1));
 
         ComboBoxEmpleadoAsignado.setBackground(new java.awt.Color(92, 116, 118));
         ComboBoxEmpleadoAsignado.setForeground(java.awt.Color.white);
-        PanelFondo.add(ComboBoxEmpleadoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 270, 40));
+        PanelFondo.add(ComboBoxEmpleadoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, 270, 40));
 
         LabelVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha-hacia-atras.png"))); // NOI18N
         LabelVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -197,27 +220,28 @@ public class CrearTarea extends javax.swing.JFrame {
                 BotonAgregarEmpleadoActionPerformed(evt);
             }
         });
-        PanelFondo.add(BotonAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, -1, -1));
+        PanelFondo.add(BotonAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, -1, -1));
 
         ComboBoxPrioridad.setBackground(new java.awt.Color(92, 116, 118));
         ComboBoxPrioridad.setForeground(java.awt.Color.white);
         ComboBoxPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media", "Alta" }));
-        PanelFondo.add(ComboBoxPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 250, 40));
+        PanelFondo.add(ComboBoxPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 250, 40));
 
         ComboBoxEstado.setBackground(new java.awt.Color(92, 116, 118));
         ComboBoxEstado.setForeground(java.awt.Color.white);
-        ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrasada", "Pendiente", "Finalizada" }));
-        PanelFondo.add(ComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 250, 40));
+        ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente", "Retrasada", "Finalizada" }));
+        ComboBoxEstado.setEnabled(false);
+        PanelFondo.add(ComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 250, 40));
 
         CampoEmpleados.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CampoEmpleados.setForeground(java.awt.Color.white);
         CampoEmpleados.setText("0");
-        PanelFondo.add(CampoEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 430, 30, 40));
+        PanelFondo.add(CampoEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 400, 30, 40));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Empleados añadidos: ");
-        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 440, -1, 20));
+        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 410, -1, 20));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(java.awt.Color.white);
@@ -242,6 +266,7 @@ public class CrearTarea extends javax.swing.JFrame {
             }
         });
         PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 190, 30));
 
         jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
@@ -284,7 +309,14 @@ public class CrearTarea extends javax.swing.JFrame {
     private void BotonCrearTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearTareaActionPerformed
         // TODO add your handling code here:
 
-        if (CampoNombre.getText() != null && CampoFecEntrega != null && CampoNotas.getText() != null) {
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        fechaSeleccionada = LocalDate.parse(CampoFecEntrega.getText(), formatter);
+        fechaActual = LocalDate.now();
+
+        if (fechaSeleccionada.isBefore(fechaActual)) {
+            JOptionPane.showMessageDialog(null, "No puedes elegir una fecha de entrega anterior a la fecha actual");
+        }else if (CampoNombre.getText() != null && CampoFecEntrega != null && CampoNotas.getText() != null) {
 
             Connection cn = conexion.Conexion.conectar();
             String empleados = String.join(",", empleadosAsignados);
@@ -407,6 +439,63 @@ public class CrearTarea extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_LabelLogoMouseClicked
 
+    private void CampoFecEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoFecEntregaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoFecEntregaActionPerformed
+
+    private void CampoFecEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoFecEntregaMouseClicked
+        // TODO add your handling code here:
+        JDialog dialog = new JDialog();
+        dialog.setTitle("Seleccione una fecha");
+        dialog.setModal(true);
+        dialog.setUndecorated(true); 
+        dialog.setLayout(new BorderLayout());
+
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Hoy");
+        p.put("text.month", "Mes");
+        p.put("text.year", "Año");
+
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+
+        dialog.add(datePicker, BorderLayout.CENTER);
+
+        datePicker.addActionListener(e1 -> {
+            CampoFecEntrega.setText(datePicker.getJFormattedTextField().getText());
+            dialog.dispose();
+        });
+
+        Point location = CampoFecEntrega.getLocationOnScreen();
+        dialog.setLocation(location.x, location.y + CampoFecEntrega.getHeight());
+
+        dialog.pack();
+
+        dialog.setVisible(true);
+    }//GEN-LAST:event_CampoFecEntregaMouseClicked
+
+    
+     public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
+
+        private String datePattern = "yyyy-MM-dd";
+        private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            return dateFormatter.parseObject(text);
+        }
+
+        @Override
+        public String valueToString(Object value) throws ParseException {
+            if (value != null) {
+                Calendar cal = (Calendar) value;
+                return dateFormatter.format(cal.getTime());
+            }
+            return "";
+
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -460,6 +549,7 @@ public class CrearTarea extends javax.swing.JFrame {
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -478,4 +568,6 @@ public class CrearTarea extends javax.swing.JFrame {
     static String idTarea;
     ArrayList<String> empleadosAsignados = new ArrayList<String>();
     ArrayList<String> idEmpleadosAsignados = new ArrayList<String>();
+    LocalDate fechaSeleccionada;
+    LocalDate fechaActual;
 }

@@ -7,8 +7,17 @@ package codigoTFG;
 
 import java.awt.*;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Properties;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 /**
  *
@@ -115,6 +124,11 @@ public class GestionarProyecto extends javax.swing.JFrame {
         CampoFechaEntrega.setForeground(java.awt.Color.white);
         CampoFechaEntrega.setDisabledTextColor(java.awt.Color.white);
         CampoFechaEntrega.setEnabled(false);
+        CampoFechaEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CampoFechaEntregaMouseClicked(evt);
+            }
+        });
         CampoFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoFechaEntregaActionPerformed(evt);
@@ -266,10 +280,17 @@ public class GestionarProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         int respuesta = JOptionPane.showOptionDialog(null, "¿Desea salir sin modificar el proyecto?", "Decisión", JOptionPane.YES_NO_OPTION, JOptionPane.YES_NO_OPTION, null, null, NORMAL);
         if (respuesta == 0) {
-            ConsultarProyectos consultarP = new ConsultarProyectos();
+            if(ConsultarTrabajadores.banderaProyectos == true){
+                ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
+                consultarT.setVisible(true);
+                this.dispose();
+            }else{
+                ConsultarProyectos consultarP = new ConsultarProyectos();
             consultarP.setVisible(true);
             bandera = false;
             this.dispose();
+            }
+            
         }
 
     }//GEN-LAST:event_LabelVolverMouseClicked
@@ -380,6 +401,58 @@ public class GestionarProyecto extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_LabelLogoMouseClicked
 
+    private void CampoFechaEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoFechaEntregaMouseClicked
+        // TODO add your handling code here:
+         JDialog dialog = new JDialog();
+        dialog.setTitle("Seleccione una fecha");
+        dialog.setModal(true);
+        dialog.setUndecorated(true); 
+        dialog.setLayout(new BorderLayout());
+
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Hoy");
+        p.put("text.month", "Mes");
+        p.put("text.year", "Año");
+
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+
+        dialog.add(datePicker, BorderLayout.CENTER);
+
+        datePicker.addActionListener(e1 -> {
+            CampoFechaEntrega.setText(datePicker.getJFormattedTextField().getText());
+            dialog.dispose();
+        });
+
+        Point location = CampoFechaEntrega.getLocationOnScreen();
+        dialog.setLocation(location.x, location.y + CampoFechaEntrega.getHeight());
+
+        dialog.pack();
+
+        dialog.setVisible(true);
+    }//GEN-LAST:event_CampoFechaEntregaMouseClicked
+
+     public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
+
+        private String datePattern = "yyyy-MM-dd";
+        private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            return dateFormatter.parseObject(text);
+        }
+
+        @Override
+        public String valueToString(Object value) throws ParseException {
+            if (value != null) {
+                Calendar cal = (Calendar) value;
+                return dateFormatter.format(cal.getTime());
+            }
+            return "";
+
+        }
+    }
     /**
      * @param args the command line arguments
      */

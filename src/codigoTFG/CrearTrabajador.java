@@ -44,11 +44,11 @@ public class CrearTrabajador extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
 
-            PreparedStatement ps = cn.prepareStatement("SELECT Nombre, Apellidos FROM usuarios WHERE Tipo = ?");
-            ps.setString(1, "Administrador");
+            PreparedStatement ps = cn.prepareStatement("SELECT Nombre, Apellidos FROM usuarios WHERE ID = ?");
+            ps.setInt(1, Login.idInicioSesion);
 
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 ComboBoxAgregadoPor.addItem(rs.getString(1) + " " + rs.getString(2));
             }
 
@@ -104,6 +104,7 @@ public class CrearTrabajador extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         LabelLogo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -307,6 +308,9 @@ public class CrearTrabajador extends javax.swing.JFrame {
         });
         PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
 
+        jLabel1.setForeground(java.awt.Color.white);
+        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 700, 190, 20));
+
         jLabel18.setBackground(new java.awt.Color(26, 46, 68));
         jLabel18.setOpaque(true);
         PanelFondo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 860));
@@ -345,6 +349,7 @@ public class CrearTrabajador extends javax.swing.JFrame {
             urlImagen = archivoSeleccionado.getName();
             try {
                 fotoSeleccionada = ImageIO.read(archivoSeleccionado);
+                jLabel1.setText(urlImagen);
             } catch (IOException e) {
                 System.out.println("Error al cargar la foto: " + e.getMessage());
             }
@@ -483,6 +488,7 @@ public class CrearTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel LabelVolver;
     private javax.swing.JPanel PanelFondo;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

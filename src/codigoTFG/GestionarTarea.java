@@ -5,8 +5,10 @@
  */
 package codigoTFG;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -17,11 +19,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Properties;
 import javax.imageio.ImageIO;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 import sun.security.rsa.RSACore;
 import sun.security.timestamp.TSRequest;
 
@@ -47,10 +58,12 @@ public class GestionarTarea extends javax.swing.JFrame {
             ps.setString(1, ConsultarTareas.idSeleccionado);
 
             ResultSet rs = ps.executeQuery();
+
             while (rs.next()) {
                 idTarea = rs.getString(1);
                 CampoID.setText(rs.getString(1));
                 CampoNombre.setText(rs.getString(2));
+                    empleadosAsignados.add(rs.getString(3));
                 CampoFecEntrega.setText(rs.getString(4));
                 ComboBoxEstado.setSelectedItem(rs.getString(5));
                 ComboBoxPrioridad.setSelectedItem(rs.getString(6));
@@ -271,6 +284,11 @@ public class GestionarTarea extends javax.swing.JFrame {
         CampoFecEntrega.setForeground(java.awt.Color.white);
         CampoFecEntrega.setDisabledTextColor(java.awt.Color.white);
         CampoFecEntrega.setEnabled(false);
+        CampoFecEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CampoFecEntregaMouseClicked(evt);
+            }
+        });
         PanelFondo.add(CampoFecEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 250, -1));
 
         ComboBoxEmpleadoDisponible.setBackground(new java.awt.Color(92, 116, 118));
@@ -380,7 +398,7 @@ public class GestionarTarea extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+
     private void BotonURLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonURLActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
@@ -495,6 +513,7 @@ public class GestionarTarea extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(null, "El empleado " + ComboBoxEmpleadoDisponible.getSelectedItem().toString() + " ha sido agregado a esta tarea");
+            ComboBoxEmpleadoAsignado.addItem(nombre + " " + apellidos);
             int numeroActualEmpleados = Integer.parseInt(CampoEmpleados.getText());
             CampoEmpleados.setText(String.valueOf(numeroActualEmpleados + 1));
 
@@ -554,7 +573,7 @@ public class GestionarTarea extends javax.swing.JFrame {
                 idEmpleadosAsignados.add(rs.getString(1));
             }
 
-            JOptionPane.showMessageDialog(null, "El empleado " + ComboBoxEmpleadoDisponible.getSelectedItem().toString() + " ha sido eliminado de esta tarea");
+            JOptionPane.showMessageDialog(null, "El empleado " + ComboBoxEmpleadoAsignado.getSelectedItem().toString() + " ha sido eliminado de esta tarea");
             int numeroActualEmpleados = Integer.parseInt(CampoEmpleados.getText());
             CampoEmpleados.setText(String.valueOf(numeroActualEmpleados - 1));
 
@@ -578,6 +597,60 @@ public class GestionarTarea extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_LabelLogoMouseClicked
+
+    private void CampoFecEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoFecEntregaMouseClicked
+        // TODO add your handling code here:
+        JDialog dialog = new JDialog();
+        dialog.setTitle("Seleccione una fecha");
+        dialog.setModal(true);
+        dialog.setUndecorated(true);
+        dialog.setLayout(new BorderLayout());
+
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Hoy");
+        p.put("text.month", "Mes");
+        p.put("text.year", "Año");
+
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+
+        dialog.add(datePicker, BorderLayout.CENTER);
+
+        datePicker.addActionListener(e1 -> {
+            CampoFecEntrega.setText(datePicker.getJFormattedTextField().getText());
+            dialog.dispose();
+        });
+
+        Point location = CampoFecEntrega.getLocationOnScreen();
+        dialog.setLocation(location.x, location.y + CampoFecEntrega.getHeight());
+
+        dialog.pack();
+
+        dialog.setVisible(true);
+
+    }//GEN-LAST:event_CampoFecEntregaMouseClicked
+
+    public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
+
+        private String datePattern = "yyyy-MM-dd";
+        private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            return dateFormatter.parseObject(text);
+        }
+
+        @Override
+        public String valueToString(Object value) throws ParseException {
+            if (value != null) {
+                Calendar cal = (Calendar) value;
+                return dateFormatter.format(cal.getTime());
+            }
+            return "";
+
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -663,7 +736,7 @@ public class GestionarTarea extends javax.swing.JFrame {
     String idEmpleado;
     ArrayList<String> empleadosAsignados = new ArrayList<String>();
     ArrayList<String> idEmpleadosAsignados = new ArrayList<String>();
- public static BufferedImage fotoSeleccionada;
+    public static BufferedImage fotoSeleccionada;
     ArrayList<String> idEmpleadosNuevos = new ArrayList<String>();
     ArrayList<String> idsAExcluir = new ArrayList<String>();
 }

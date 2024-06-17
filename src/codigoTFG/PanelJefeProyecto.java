@@ -208,6 +208,7 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         ConsultarProyectos gestP = new ConsultarProyectos();
         gestP.setVisible(true);
+        bandera = false;
         this.dispose();
     }//GEN-LAST:event_ImagenGestProyectoMouseClicked
 
@@ -326,4 +327,5 @@ public class PanelJefeProyecto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     public static javax.swing.JLabel labelhora;
     // End of variables declaration//GEN-END:variables
+    static boolean bandera = true;
 }
