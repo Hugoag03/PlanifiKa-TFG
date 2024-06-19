@@ -1,4 +1,4 @@
-PlanifiKa - Sistema Gestor de Tareas (TFG)
+<h1>PlanifiKa - Sistema Gestor de Tareas (TFG)</h1>
 
 Bienvenidos a PlanifiKa, un sistema gestor de tareas desarrollado como Trabajo de Fin de Grado para el grado superior de Desarrollo de Aplicaciones Multiplataforma. 
 Este proyecto está desarrollado íntegramente en Java para el Back-End y el Front-End.
