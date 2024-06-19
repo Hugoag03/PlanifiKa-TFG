@@ -6,7 +6,7 @@
 package codigoTFG;
 
 import java.awt.*;
-import javax.swing.border.AbstractBorder;
+import javax.swing.border.*;
 /**
  *
  * @author Hugo

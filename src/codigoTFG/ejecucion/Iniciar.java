@@ -9,7 +9,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
- * @author CHAPARRO
+ * @author Hugo
  */
 public class Iniciar {
 

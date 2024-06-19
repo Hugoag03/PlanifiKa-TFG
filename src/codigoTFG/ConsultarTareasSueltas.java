@@ -5,10 +5,8 @@
  */
 package codigoTFG;
 
-import static codigoTFG.GestionarProyecto.bandera;
-import com.sun.jndi.cosnaming.CNCtx;
+
 import java.awt.*;
-import static java.awt.Frame.NORMAL;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.event.*;

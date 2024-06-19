@@ -344,6 +344,8 @@ public class ConsultarTrabajadores extends javax.swing.JFrame {
             panelA.setVisible(true);
             this.dispose();
         }
+
+
     }//GEN-LAST:event_LabelVolverMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked

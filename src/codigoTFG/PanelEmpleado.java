@@ -5,14 +5,9 @@
  */
 package codigoTFG;
 
-import static codigoTFG.PanelAdmin.labelhora;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
@@ -58,7 +53,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
         PanelFondo = new javax.swing.JPanel();
         LabelGestEmp1 = new javax.swing.JLabel();
         ImagenTareasAsig = new javax.swing.JLabel();
-        ImagenSolicitarBaja = new javax.swing.JLabel();
+        ImagenSolicitudes = new javax.swing.JLabel();
         LabelGestEmp = new javax.swing.JLabel();
         LabelCirculo = new javax.swing.JLabel();
         LabelCirculo1 = new javax.swing.JLabel();
@@ -96,25 +91,25 @@ public class PanelEmpleado extends javax.swing.JFrame {
         });
         PanelFondo.add(ImagenTareasAsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 130, 150));
 
-        ImagenSolicitarBaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/conversacion.png"))); // NOI18N
-        ImagenSolicitarBaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ImagenSolicitarBaja.addMouseListener(new java.awt.event.MouseAdapter() {
+        ImagenSolicitudes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/conversacion.png"))); // NOI18N
+        ImagenSolicitudes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ImagenSolicitudes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImagenSolicitarBajaMouseClicked(evt);
+                ImagenSolicitudesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ImagenSolicitarBajaMouseEntered(evt);
+                ImagenSolicitudesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ImagenSolicitarBajaMouseExited(evt);
+                ImagenSolicitudesMouseExited(evt);
             }
         });
-        PanelFondo.add(ImagenSolicitarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 140, 130));
+        PanelFondo.add(ImagenSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 140, 130));
 
         LabelGestEmp.setFont(new java.awt.Font("Poor Richard", 1, 20)); // NOI18N
         LabelGestEmp.setForeground(java.awt.Color.black);
-        LabelGestEmp.setText("VER SOLICITUDES");
-        PanelFondo.add(LabelGestEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 180, -1));
+        LabelGestEmp.setText("SOLICITUDES");
+        PanelFondo.add(LabelGestEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 130, -1));
 
         LabelCirculo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circuloback.png"))); // NOI18N
@@ -167,7 +162,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(92, 116, 118));
         jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
         jLabel3.setOpaque(true);
-        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 290, 290));
+        PanelFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 300, 290));
 
         jLabel2.setBackground(new java.awt.Color(92, 116, 118));
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
@@ -205,17 +200,17 @@ public class PanelEmpleado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ImagenSolicitarBajaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitarBajaMouseClicked
+    private void ImagenSolicitudesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitudesMouseClicked
         // TODO add your handling code here:
         if (Login.tipoEmpleado.equals("Administrador")) {
-            JOptionPane.showMessageDialog(null, "Tu departamento no puede solicitar baja");
+            JOptionPane.showMessageDialog(null, "Tu departamento debe ver las solicitudes desde el panel de gestión de trabajadores");
         } else {
             bandera = false;
             ConsultarSolicitudes consultarS = new ConsultarSolicitudes();
             consultarS.setVisible(true);
             this.dispose();
         }
-    }//GEN-LAST:event_ImagenSolicitarBajaMouseClicked
+    }//GEN-LAST:event_ImagenSolicitudesMouseClicked
 
     private void LabelCirculoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelCirculoMouseEntered
 
@@ -243,15 +238,15 @@ public class PanelEmpleado extends javax.swing.JFrame {
         LabelCirculo1.setVisible(false);
     }//GEN-LAST:event_ImagenTareasAsigMouseExited
 
-    private void ImagenSolicitarBajaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitarBajaMouseEntered
+    private void ImagenSolicitudesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitudesMouseEntered
         // TODO add your handling code here:
         LabelCirculo.setVisible(true);
-    }//GEN-LAST:event_ImagenSolicitarBajaMouseEntered
+    }//GEN-LAST:event_ImagenSolicitudesMouseEntered
 
-    private void ImagenSolicitarBajaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitarBajaMouseExited
+    private void ImagenSolicitudesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenSolicitudesMouseExited
         // TODO add your handling code here:
         LabelCirculo.setVisible(false);
-    }//GEN-LAST:event_ImagenSolicitarBajaMouseExited
+    }//GEN-LAST:event_ImagenSolicitudesMouseExited
 
     private void LabelVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelVolverMouseClicked
         // TODO add your handling code here:
@@ -320,7 +315,7 @@ public class PanelEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ImagenSolicitarBaja;
+    private javax.swing.JLabel ImagenSolicitudes;
     private javax.swing.JLabel ImagenTareasAsig;
     private javax.swing.JLabel LabelCirculo;
     private javax.swing.JLabel LabelCirculo1;

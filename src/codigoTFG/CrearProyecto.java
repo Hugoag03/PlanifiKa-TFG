@@ -7,16 +7,11 @@ package codigoTFG;
 
 import java.awt.*;
 import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.Calendar;
-import java.util.Properties;
-import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
+import java.text.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
+import javax.swing.*;
 import org.jdatepicker.impl.*;
 
 /**
@@ -37,7 +32,7 @@ public class CrearProyecto extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
 
-            PreparedStatement ps = cn.prepareStatement("SELECT Nombre, Apellidos FROM usuarios WHERE Tipo = ?");
+            PreparedStatement ps = cn.prepareStatement("SELECT Nombre, Apellidos FROM usuarios WHERE Tipo = ? ORDER BY Nombre");
             ps.setString(1, "JefeProyecto");
 
             ResultSet rs = ps.executeQuery();

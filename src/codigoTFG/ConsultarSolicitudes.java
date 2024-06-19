@@ -5,24 +5,11 @@
  */
 package codigoTFG;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
+import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.table.*;
 
 /**
  *
@@ -43,10 +30,11 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
             Connection cn = conexion.Conexion.conectar();
             PreparedStatement ps = cn.prepareStatement("SELECT * FROM solicitudes WHERE ID_Empleado = ?");
             if (PanelEmpleado.bandera == true) {
-
+                BotonNuevaSolicitud.setVisible(false);
                 ps.setString(1, GestionarTrabajador.CampoID.getText());
 
             } else {
+                BotonNuevaSolicitud.setVisible(true);
                 ps.setInt(1, Login.idInicioSesion);
             }
             ResultSet rs = ps.executeQuery();
@@ -57,8 +45,8 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
             modelo.addColumn("Mensaje");
             modelo.addColumn("Fecha");
             modelo.addColumn("Estado");
-
             modelo.addColumn("URLArchivoAdjunto");
+            modelo.addColumn("Respuesta");
             modelo.addColumn("ID_Empleado");
             modelo.addColumn("ID_Administrador");
 
@@ -69,10 +57,11 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                 fecha = rs.getDate(4);
                 estado = rs.getString(5);
                 urlArchivoAdjunto = rs.getString(6);
+                respuesta = rs.getString(9);
                 id_empleado = rs.getInt(7);
                 id_administrador = rs.getInt(8);
 
-                modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, id_empleado, id_administrador});
+                modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, respuesta, id_empleado, id_administrador});
 
             }
 
@@ -103,6 +92,7 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelFondo = new javax.swing.JPanel();
+        BotonNuevaSolicitud = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdConsultarTrabajador = new javax.swing.JTable();
         textFiltrarSegunDNI = new javax.swing.JLabel();
@@ -118,20 +108,32 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
 
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BotonNuevaSolicitud.setBackground(new java.awt.Color(87, 186, 144));
+        BotonNuevaSolicitud.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        BotonNuevaSolicitud.setForeground(java.awt.Color.white);
+        BotonNuevaSolicitud.setText("Nueva solicitud");
+        BotonNuevaSolicitud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonNuevaSolicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonNuevaSolicitudActionPerformed(evt);
+            }
+        });
+        PanelFondo.add(BotonNuevaSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 690, 260, 60));
+
         tdConsultarTrabajador.setBackground(new java.awt.Color(92, 116, 118));
         tdConsultarTrabajador.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tdConsultarTrabajador.setForeground(java.awt.Color.white);
         tdConsultarTrabajador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Título", "Mensaje", "Fecha", "Estado", "URLArchivoAdjunto", "ID_Empleado", "ID_Administrador"
+                "ID", "Título", "Mensaje", "Fecha", "Estado", "URLArchivoAdjunto", "Respuesta", "ID_Empleado", "ID_Administrador"
             }
         ));
         tdConsultarTrabajador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tdConsultarTrabajador.setSelectionBackground(java.awt.Color.white);
-        tdConsultarTrabajador.setSelectionForeground(java.awt.Color.black);
+        tdConsultarTrabajador.setSelectionBackground(new java.awt.Color(92, 116, 118));
+        tdConsultarTrabajador.setSelectionForeground(java.awt.Color.white);
         jScrollPane1.setViewportView(tdConsultarTrabajador);
 
         PanelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 1200, 550));
@@ -227,6 +229,7 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                 modelo.addColumn("Estado");
 
                 modelo.addColumn("URLArchivoAdjunto");
+                modelo.addColumn("Respuesta");
                 modelo.addColumn("ID_Empleado");
                 modelo.addColumn("ID_Administrador");
 
@@ -237,10 +240,11 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                     fecha = rs.getDate(4);
                     estado = rs.getString(5);
                     urlArchivoAdjunto = rs.getString(6);
+                    respuesta = rs.getString(9);
                     id_empleado = rs.getInt(7);
                     id_administrador = rs.getInt(8);
 
-                    modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, id_empleado, id_administrador});
+                    modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, respuesta, id_empleado, id_administrador});
 
                 }
 
@@ -274,6 +278,7 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                 modelo.addColumn("Estado");
 
                 modelo.addColumn("URLArchivoAdjunto");
+                modelo.addColumn("Respuesta");
                 modelo.addColumn("ID_Empleado");
                 modelo.addColumn("ID_Administrador");
 
@@ -284,10 +289,11 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                     fecha = rs.getDate(4);
                     estado = rs.getString(5);
                     urlArchivoAdjunto = rs.getString(6);
+                    respuesta = rs.getString(9);
                     id_empleado = rs.getInt(7);
                     id_administrador = rs.getInt(8);
 
-                    modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, id_empleado, id_administrador});
+                    modelo.addRow(new Object[]{id, titulo, mensaje, fecha, estado, urlArchivoAdjunto, respuesta, id_empleado, id_administrador});
 
                 }
 
@@ -358,26 +364,47 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
                     int filaSeleccionada = tdConsultarTrabajador.getSelectedRow();
 
                     idSeleccionado = tdConsultarTrabajador.getValueAt(filaSeleccionada, 0).toString();
-                    Connection cn = conexion.Conexion.conectar();
-                    try {
-                        PreparedStatement ps = cn.prepareStatement("SELECT Estado FROM solicitudes WHERE ID = ?");
-                        ps.setString(1, idSeleccionado);
-                        ResultSet rs = ps.executeQuery();
-                        if (rs.next()) {
-                            if (rs.getString(1).equals("Finalizada") || PanelEmpleado.bandera == false) {
-                                JOptionPane.showMessageDialog(null, "Esta solicitud está finalizada. Si desea tratar otro tema, envie una nueva solicitud");
-                            } else {
-                                GestionarSolicitud gestionarS = new GestionarSolicitud();
-                                gestionarS.setVisible(true);
-                                dispose();
+                    if (PanelEmpleado.bandera == true) {
+
+                        Connection cn = conexion.Conexion.conectar();
+                        try {
+                            PreparedStatement ps = cn.prepareStatement("SELECT Estado FROM solicitudes WHERE ID = ?");
+                            ps.setString(1, idSeleccionado);
+                            ResultSet rs = ps.executeQuery();
+                            if (rs.next()) {
+                                if (rs.getString(1).equals("Finalizada") || PanelEmpleado.bandera == false) {
+                                    JOptionPane.showMessageDialog(null, "Esta solicitud está finalizada. Si desea tratar otro tema, envie una nueva solicitud");
+                                } else {
+                                    int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion", "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Gestionar solicitud", "Responder solicitud"}, null);
+                                    if (seleccion == 0) {
+                                        GestionarSolicitud gestionarS = new GestionarSolicitud();
+                                        gestionarS.setVisible(true);
+                                        dispose();
+                                    } else {
+                                        String respuesta = JOptionPane.showInputDialog(null, "Introduzca su respuesta para la solicitud cuyo mensaje es:\n" + mensaje);
+                                        if (!respuesta.isEmpty()) {
+
+                                            PreparedStatement ps2 = cn.prepareStatement("UPDATE solicitudes SET Respuesta = ?, Estado = ? WHERE ID = ?");
+                                            ps2.setString(1, respuesta);
+                                            ps2.setString(2, "Finalizada");
+                                            ps2.setString(3, idSeleccionado);
+                                            ps2.executeUpdate();
+                                            JOptionPane.showMessageDialog(null, "Solicitud respondida con éxito");
+
+                                        } else {
+                                            JOptionPane.showMessageDialog(null, "Debes redactar una respuesta");
+                                        }
+                                    }
+
+                                }
                             }
+                        } catch (SQLException e2) {
+                            e2.printStackTrace();
                         }
-                    } catch (SQLException e2) {
-                        e2.printStackTrace();
+
                     }
 
                 }
-
             }
 
         });
@@ -406,6 +433,13 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_LabelLogoMouseClicked
+
+    private void BotonNuevaSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonNuevaSolicitudActionPerformed
+        // TODO add your handling code here:
+       CrearSolicitud crearS = new CrearSolicitud();
+       crearS.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_BotonNuevaSolicitudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,6 +477,7 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonNuevaSolicitud;
     private javax.swing.JComboBox<String> ComboBoxOrdenar;
     private javax.swing.JLabel LabelLogo;
     private javax.swing.JLabel LabelVolver;
@@ -464,4 +499,5 @@ public class ConsultarSolicitudes extends javax.swing.JFrame {
     int id_administrador;
     TableRowSorter<TableModel> sorter;
     static String idSeleccionado;
+    String respuesta;
 }

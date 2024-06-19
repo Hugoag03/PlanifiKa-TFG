@@ -6,13 +6,12 @@
 package codigoTFG.ejecucion;
 
 import codigoTFG.Login;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import javax.swing.*;
 
 /**
  *
- * @author CHAPARRO
+ * @author Hugo
  */
 public class BarraProgreso extends JFrame implements Runnable {
 
@@ -101,8 +100,8 @@ public class BarraProgreso extends JFrame implements Runnable {
         if (bandera) {
             this.dispose();
             bandera = false;
-            Login in = new Login();
-            in.setVisible(true);
+            Login login = new Login();
+            login.setVisible(true);
         }
     }
 

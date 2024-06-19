@@ -5,13 +5,9 @@
  */
 package codigoTFG;
 
-import static codigoTFG.PanelAdmin.labelhora;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *

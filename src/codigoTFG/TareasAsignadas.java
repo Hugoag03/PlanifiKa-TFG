@@ -165,6 +165,8 @@ public class TareasAsignadas extends javax.swing.JFrame {
             }
         ));
         tdConsultarTrabajador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tdConsultarTrabajador.setSelectionBackground(new java.awt.Color(92, 116, 118));
+        tdConsultarTrabajador.setSelectionForeground(java.awt.Color.white);
         jScrollPane1.setViewportView(tdConsultarTrabajador);
 
         PanelFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 1200, 550));

@@ -5,18 +5,12 @@
  */
 package codigoTFG;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import java.awt.image.*;
+import java.io.*;
+import java.sql.*;
+import javax.imageio.*;
+import javax.swing.*;
 
 /**
  *
@@ -35,7 +29,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         Connection cn = conexion.Conexion.conectar();
         try {
 
-            PreparedStatement ps = cn.prepareStatement("SELECT ID, Titulo, Mensaje, Fecha, Estado, URLArchivoAdjunto, ID_Empleado, ID_Administrador FROM solicitudes WHERE ID = ?");
+            PreparedStatement ps = cn.prepareStatement("SELECT ID, Titulo, Mensaje, Fecha, Estado, URLArchivoAdjunto, Respuesta, ID_Empleado, ID_Administrador FROM solicitudes WHERE ID = ?");
             ps.setString(1, ConsultarSolicitudes.idSeleccionado);
 
             ResultSet rs = ps.executeQuery();
@@ -47,8 +41,9 @@ public class GestionarSolicitud extends javax.swing.JFrame {
                 CampoFecha.setText(rs.getString(4));
                 ComboBoxEstado.setSelectedItem(rs.getString(5));
                 jLabel1.setText(rs.getString(6));
-                CampoIDEmpleado.setText(rs.getString(7));
-                CampoIDAdmin.setText(rs.getString(8));
+                CampoRespuesta.setText(rs.getString(7));
+                CampoIDEmpleado.setText(rs.getString(8));
+                CampoIDAdmin.setText(rs.getString(9));
             }
 
         } catch (SQLException e) {
@@ -75,6 +70,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         CampoIDEmpleado = new javax.swing.JTextField();
         CampoIDAdmin = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         CampoID = new javax.swing.JTextField();
@@ -91,6 +87,8 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         ComboBoxEstado = new javax.swing.JComboBox<>();
         CheckBoxModificar = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        CampoRespuesta = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoMensaje = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
@@ -106,43 +104,48 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel15.setForeground(java.awt.Color.white);
         jLabel15.setText("ID empleado:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, -1, -1));
 
         CampoIDEmpleado.setBackground(new java.awt.Color(92, 116, 118));
         CampoIDEmpleado.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         CampoIDEmpleado.setForeground(java.awt.Color.white);
         CampoIDEmpleado.setDisabledTextColor(java.awt.Color.white);
         CampoIDEmpleado.setEnabled(false);
-        jPanel1.add(CampoIDEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 340, 110, -1));
+        jPanel1.add(CampoIDEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 60, 110, -1));
 
         CampoIDAdmin.setBackground(new java.awt.Color(92, 116, 118));
         CampoIDAdmin.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         CampoIDAdmin.setForeground(java.awt.Color.white);
         CampoIDAdmin.setDisabledTextColor(java.awt.Color.white);
         CampoIDAdmin.setEnabled(false);
-        jPanel1.add(CampoIDAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 110, -1));
+        jPanel1.add(CampoIDAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, 110, -1));
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel21.setForeground(java.awt.Color.white);
+        jLabel21.setText("Respuesta:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 300, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel20.setForeground(java.awt.Color.white);
         jLabel20.setText("Mensaje:");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 300, -1, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel12.setForeground(java.awt.Color.white);
         jLabel12.setText("ID administrador:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, -1, -1));
 
         CampoID.setBackground(new java.awt.Color(92, 116, 118));
         CampoID.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         CampoID.setForeground(java.awt.Color.white);
         CampoID.setDisabledTextColor(java.awt.Color.white);
         CampoID.setEnabled(false);
-        jPanel1.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, 70, -1));
+        jPanel1.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 70, -1));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel11.setForeground(java.awt.Color.white);
         jLabel11.setText("ID:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel13.setForeground(java.awt.Color.white);
@@ -215,7 +218,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
 
         ComboBoxEstado.setBackground(new java.awt.Color(92, 116, 118));
         ComboBoxEstado.setForeground(java.awt.Color.white);
-        ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrasada", "Pendiente", "Finalizada" }));
+        ComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Retrasada", "Pendiente" }));
         ComboBoxEstado.setEnabled(false);
         jPanel1.add(ComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 180, 250, 40));
 
@@ -242,6 +245,16 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 20, 20, 30));
 
+        CampoRespuesta.setBackground(new java.awt.Color(92, 116, 118));
+        CampoRespuesta.setColumns(20);
+        CampoRespuesta.setForeground(java.awt.Color.white);
+        CampoRespuesta.setRows(5);
+        CampoRespuesta.setDisabledTextColor(java.awt.Color.white);
+        CampoRespuesta.setEnabled(false);
+        jScrollPane2.setViewportView(CampoRespuesta);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 330, 260, 100));
+
         CampoMensaje.setBackground(new java.awt.Color(92, 116, 118));
         CampoMensaje.setColumns(20);
         CampoMensaje.setForeground(java.awt.Color.white);
@@ -250,7 +263,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
         CampoMensaje.setEnabled(false);
         jScrollPane1.setViewportView(CampoMensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 330, 260, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 260, 100));
 
         jLabel4.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(87, 186, 144));
@@ -412,6 +425,7 @@ public class GestionarSolicitud extends javax.swing.JFrame {
     private javax.swing.JTextField CampoIDAdmin;
     private javax.swing.JTextField CampoIDEmpleado;
     private javax.swing.JTextArea CampoMensaje;
+    private javax.swing.JTextArea CampoRespuesta;
     private javax.swing.JTextField CampoTitulo;
     private javax.swing.JCheckBox CheckBoxModificar;
     private javax.swing.JComboBox<String> ComboBoxEstado;
@@ -427,10 +441,12 @@ public class GestionarSolicitud extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
   String urlImagen;
     public static BufferedImage fotoSeleccionada;

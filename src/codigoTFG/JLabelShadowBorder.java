@@ -11,8 +11,7 @@ package codigoTFG;
  */
 
 import java.awt.*;
-import javax.swing.border.AbstractBorder;
-import javax.swing.*;
+import javax.swing.border.*;
 
 public class JLabelShadowBorder extends AbstractBorder{
      private int thickness;

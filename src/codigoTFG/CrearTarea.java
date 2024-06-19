@@ -5,36 +5,17 @@
  */
 package codigoTFG;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.sql.Array;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Properties;
-import javax.imageio.ImageIO;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
-import sun.security.rsa.RSACore;
+import java.awt.*;
+import java.awt.image.*;
+import java.io.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
+import javax.imageio.*;
+import javax.swing.*;
+import org.jdatepicker.impl.*;
 
 /**
  *
@@ -266,6 +247,8 @@ public class CrearTarea extends javax.swing.JFrame {
             }
         });
         PanelFondo.add(LabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+
+        jLabel1.setForeground(java.awt.Color.white);
         PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 190, 30));
 
         jLabel18.setBackground(new java.awt.Color(26, 46, 68));
@@ -300,6 +283,7 @@ public class CrearTarea extends javax.swing.JFrame {
             urlImagen = archivoSeleccionado.getName();
             try {
                 fotoSeleccionada = ImageIO.read(archivoSeleccionado);
+                jLabel1.setText(urlImagen);
             } catch (IOException e) {
                 System.out.println("Error al cargar la foto: " + e.getMessage());
             }

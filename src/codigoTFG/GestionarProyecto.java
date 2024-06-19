@@ -7,17 +7,10 @@ package codigoTFG;
 
 import java.awt.*;
 import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Properties;
-import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
+import java.text.*;
+import java.util.*;
+import javax.swing.*;
+import org.jdatepicker.impl.*;
 
 /**
  *
@@ -87,6 +80,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         CampoNombre = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        BotonEliminar = new javax.swing.JButton();
         BotonAñadirTareas = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         CampoDescripcion = new javax.swing.JTextField();
@@ -152,6 +146,18 @@ public class GestionarProyecto extends javax.swing.JFrame {
         jLabel10.setForeground(java.awt.Color.white);
         jLabel10.setText("Nombre:");
         PanelFondo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+
+        BotonEliminar.setBackground(new java.awt.Color(87, 186, 144));
+        BotonEliminar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        BotonEliminar.setForeground(java.awt.Color.white);
+        BotonEliminar.setText("Eliminar proyecto");
+        BotonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarActionPerformed(evt);
+            }
+        });
+        PanelFondo.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 340, 60));
 
         BotonAñadirTareas.setBackground(new java.awt.Color(87, 186, 144));
         BotonAñadirTareas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -280,17 +286,17 @@ public class GestionarProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         int respuesta = JOptionPane.showOptionDialog(null, "¿Desea salir sin modificar el proyecto?", "Decisión", JOptionPane.YES_NO_OPTION, JOptionPane.YES_NO_OPTION, null, null, NORMAL);
         if (respuesta == 0) {
-            if(ConsultarTrabajadores.banderaProyectos == true){
+            if (ConsultarTrabajadores.banderaProyectos == true) {
                 ConsultarTrabajadores consultarT = new ConsultarTrabajadores();
                 consultarT.setVisible(true);
                 this.dispose();
-            }else{
+            } else {
                 ConsultarProyectos consultarP = new ConsultarProyectos();
-            consultarP.setVisible(true);
-            bandera = false;
-            this.dispose();
+                consultarP.setVisible(true);
+                bandera = false;
+                this.dispose();
             }
-            
+
         }
 
     }//GEN-LAST:event_LabelVolverMouseClicked
@@ -403,10 +409,10 @@ public class GestionarProyecto extends javax.swing.JFrame {
 
     private void CampoFechaEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CampoFechaEntregaMouseClicked
         // TODO add your handling code here:
-         JDialog dialog = new JDialog();
+        JDialog dialog = new JDialog();
         dialog.setTitle("Seleccione una fecha");
         dialog.setModal(true);
-        dialog.setUndecorated(true); 
+        dialog.setUndecorated(true);
         dialog.setLayout(new BorderLayout());
 
         UtilDateModel model = new UtilDateModel();
@@ -433,7 +439,23 @@ public class GestionarProyecto extends javax.swing.JFrame {
         dialog.setVisible(true);
     }//GEN-LAST:event_CampoFechaEntregaMouseClicked
 
-     public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
+    private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
+        // TODO add your handling code here:
+        Connection cn = conexion.Conexion.conectar();
+        try {
+            PreparedStatement ps = cn.prepareStatement("DELETE FROM proyectos WHERE ID = ?");
+            ps.setString(1, CampoID.getText());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "El proyecto ha sido eliminado con éxito");
+            ConsultarProyectos consultarP = new ConsultarProyectos();
+            consultarP.setVisible(true);
+            this.dispose();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_BotonEliminarActionPerformed
+
+    public static class DateLabelFormatter extends JFormattedTextField.AbstractFormatter {
 
         private String datePattern = "yyyy-MM-dd";
         private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
@@ -453,6 +475,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
 
         }
     }
+
     /**
      * @param args the command line arguments
      */
@@ -497,6 +520,7 @@ public class GestionarProyecto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAñadirTareas;
+    private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonModificarProyecto;
     private javax.swing.JTextField CampoDescripcion;
     private javax.swing.JTextField CampoFechaEntrega;
