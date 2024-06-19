@@ -4,7 +4,7 @@ Bienvenidos a PlanifiKa, un sistema gestor de tareas desarrollado como Trabajo d
 Este proyecto está desarrollado íntegramente en Java para el Back-End y el Front-End.
 
 
-🚀 Características Principales
+🚀 <b>Características Principales</b>
 
 Roles del Sistema:
 • Administradores: Gestionan usuarios y supervisan las actividades del sistema.
@@ -17,13 +17,13 @@ Gestión de Tareas:
 • Envío de solicitudes y comunicación interna entre empleados y administradores.
 
 
-📚 Requisitos
+📚 <b>Requisitos</b>
 
 • Java Development Kit (JDK) 8 o superior
 • MySQL Server
 
 
-🛠️ Instalación y Ejecución
+🛠️ <b>Instalación y Ejecución</b>
 Clona el repositorio:
 • git clone https://github.com/Hugoag03/TFG.git
 • cd TFG
@@ -35,15 +35,15 @@ Compila y ejecuta la aplicación:
 • Accede a NetBeans y añade el proyecto
 • Ejecuta el proyecto
 
-🔗 Enlaces
+🔗 <b>Enlaces</b>
 LinkedIn: https://www.linkedin.com/in/hugo-arevalo-gil/
 
-🤝 Contribuciones
+🤝 <b>Contribuciones</b>
 ¡Las contribuciones son bienvenidas! Si tienes alguna sugerencia o encuentras algún problema, contáctame.
 
-📄 Licencia
+📄 <b>Licencia</b>
 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-📧 Contacto
+📧 Contacto</b>
 Para cualquier consulta, puedes contactarme a través de mi perfil de LinkedIn.
 
