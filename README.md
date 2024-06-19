@@ -8,7 +8,9 @@ Este proyecto está desarrollado íntegramente en Java para el Back-End y el Fro
 
 Roles del Sistema:
 • Administradores: Gestionan usuarios y supervisan las actividades del sistema.
+
 • Jefes de Proyecto: Administran proyectos y asignan tareas a los empleados.
+
 • Empleados: Realizan tareas asignadas y envían solicitudes a los administradores.
 
 Gestión de Tareas:
